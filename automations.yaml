@@ -60,7 +60,7 @@
 - id: '1701339111655'
   alias: Værksted - Fryser åben
   description: ''
-  trigger:
+  triggers:
   - type: opened
     platform: device
     device_id: 011fb441f564c7fb40a4257bf2450234
@@ -70,8 +70,8 @@
       hours: 0
       minutes: 5
       seconds: 0
-  condition: []
-  action:
+  conditions: []
+  actions:
   - repeat:
       sequence:
       - device_id: 6b2348f85663897cf7acb6e717a396bd
@@ -83,11 +83,11 @@
           importance: high
         title: Fyseren
         enabled: true
-      - service: notify.mobile_app_maries_iphone_2
+      - action: notify.mobile_app_maries_iphone_2
         data:
           message: står åben
           title: Fryseren
-      - service: input_boolean.turn_on
+      - action: input_boolean.turn_on
         data: {}
         target:
           entity_id: input_boolean.alexa_test
@@ -130,15 +130,15 @@
 - id: '1701456975804'
   alias: Værksted - Fryser Lukket
   description: ''
-  trigger:
+  triggers:
   - type: not_opened
     platform: device
     device_id: 011fb441f564c7fb40a4257bf2450234
     entity_id: b06fe5de9dccc4825cdbf03c12b5597f
     domain: binary_sensor
-  condition: []
-  action:
-  - service: input_boolean.turn_off
+  conditions: []
+  actions:
+  - action: input_boolean.turn_off
     data: {}
     target:
       entity_id: input_boolean.alexa_test
@@ -212,15 +212,15 @@
 - id: '1702040257740'
   alias: Alarm - Hjemme - sluk 5.00
   description: ''
-  trigger:
+  triggers:
   - platform: time
     at: 05:00:00
-  condition:
+  conditions:
   - condition: state
     entity_id: alarm_control_panel.alarmo
     state: armed_home
-  action:
-  - service: alarmo.disarm
+  actions:
+  - action: alarmo.disarm
     data:
       entity_id: alarm_control_panel.alarmo
   mode: single
@@ -256,15 +256,15 @@
 - id: '1702292518104'
   alias: Devices - Ringklokke - Ring på
   description: ''
-  trigger:
+  triggers:
   - type: turned_on
     platform: device
     device_id: 79429dc8538e7945674da233bdddad35
     entity_id: 097b9f37d5d41243fb94140bc0987975
     domain: binary_sensor
-  condition: []
-  action:
-  - service: siren.toggle
+  conditions: []
+  actions:
+  - action: siren.toggle
     data: {}
     target:
       entity_id: siren.doorbell_6_play_tone
@@ -332,13 +332,13 @@
 - id: '1702386033137'
   alias: Alarm - Notifikation
   description: ''
-  trigger:
+  triggers:
   - platform: state
     entity_id:
     - alarm_control_panel.alarmo
     to: triggered
-  condition: []
-  action:
+  conditions: []
+  actions:
   - delay:
       hours: 0
       minutes: 0
@@ -352,7 +352,7 @@
       importance: high
     title: 'Alarm:'
     message: Alarm
-  - service: notify.mobile_app_maries_iphone_2
+  - action: notify.mobile_app_maries_iphone_2
     data:
       title: Alarm
       message: Alarm udløst
@@ -366,16 +366,16 @@
 - id: '1702387489266'
   alias: Alarm - Sirene tænd
   description: ''
-  trigger:
+  triggers:
   - platform: state
     entity_id:
     - alarm_control_panel.alarmo
     to: triggered
-  condition: []
-  action:
+  conditions: []
+  actions:
   - repeat:
       sequence:
-      - service: siren.turn_on
+      - action: siren.turn_on
         data: {}
         target:
           entity_id: siren.doorbell_6_play_tone_3
@@ -384,7 +384,7 @@
           minutes: 0
           seconds: 35
           milliseconds: 0
-      - service: light.turn_on
+      - action: light.turn_on
         target:
           entity_id: light.all_lights
         data:
@@ -397,7 +397,7 @@
 - id: '1702390436130'
   alias: Alarm - Knap værksted
   description: ''
-  trigger:
+  triggers:
   - device_id: fb1912b22c93921ae0d03fcd88d7c2ea
     domain: zha
     platform: device
@@ -410,21 +410,21 @@
     type: remote_button_short_press
     subtype: remote_button_short_press
     id: Alarm knap short press
-  condition: []
-  action:
+  conditions: []
+  actions:
   - choose:
     - conditions:
       - condition: trigger
         id:
         - Alarm knap short press
       sequence:
-      - service: alarmo.arm
+      - action: alarmo.arm
         data:
           mode: away
           skip_delay: false
           force: false
           entity_id: alarm_control_panel.alarmo
-      - service: light.turn_off
+      - action: light.turn_off
         target:
           entity_id: light.all_lights
         data: {}
@@ -433,10 +433,10 @@
         id:
         - Alarm knap long press
       sequence:
-      - service: alarmo.disarm
+      - action: alarmo.disarm
         data:
           entity_id: alarm_control_panel.alarmo
-      - service: light.turn_off
+      - action: light.turn_off
         target:
           entity_id: light.all_lights
         data: {}
@@ -445,7 +445,7 @@
           minutes: 0
           seconds: 3
           milliseconds: 0
-      - service: light.turn_on
+      - action: light.turn_on
         target:
           area_id: hallway
         data:
@@ -688,7 +688,7 @@
 - id: '1702396187956'
   alias: Devices - Vand detekteret
   description: ''
-  trigger:
+  triggers:
   - platform: state
     entity_id:
     - binary_sensor.vand_sensor_helper
@@ -697,8 +697,8 @@
       hours: 0
       minutes: 5
       seconds: 0
-  condition: []
-  action:
+  conditions: []
+  actions:
   - device_id: 6b2348f85663897cf7acb6e717a396bd
     domain: mobile_app
     type: notify
@@ -712,7 +712,7 @@
 - id: '1702405508911'
   alias: Living room - sofa knap
   description: ''
-  trigger:
+  triggers:
   - device_id: f5f6d79352a2e836d791d7470c8fae02
     domain: zha
     platform: device
@@ -731,8 +731,8 @@
     type: remote_button_double_press
     subtype: remote_button_double_press
     id: Sofa Double press
-  condition: []
-  action:
+  conditions: []
+  actions:
   - choose:
     - conditions:
       - condition: trigger
@@ -744,13 +744,13 @@
           after: '18:30:00'
           before: 06:00:00
         then:
-        - service: scene.turn_on
+        - action: scene.turn_on
           target:
             entity_id: scene.living_room_relax
           data:
             transition: 5
         else:
-        - service: scene.turn_on
+        - action: scene.turn_on
           target:
             entity_id: scene.living_room_bright
           data:
@@ -765,7 +765,7 @@
           after: '17:30:00'
           before: '22:00:00'
         then:
-        - service: scene.turn_on
+        - action: scene.turn_on
           target:
             entity_id: scene.putning
           data:
@@ -775,7 +775,7 @@
             minutes: 30
             seconds: 0
             milliseconds: 0
-        - service: scene.turn_on
+        - action: scene.turn_on
           data:
             transition: 120
           target:
@@ -785,7 +785,7 @@
         id:
         - Sofa Double press
       sequence:
-      - service: scene.turn_on
+      - action: scene.turn_on
         target:
           entity_id: scene.living_room_movie_mode
         data:
@@ -855,7 +855,7 @@
 - id: '1702451940504'
   alias: Bedroom - Rune knap 1
   description: ''
-  trigger:
+  triggers:
   - device_id: f7e043d58addc7b77277c767f020bef9
     domain: zha
     platform: device
@@ -874,8 +874,8 @@
     type: remote_button_double_press
     subtype: remote_button_double_press
     id: Bedroom rune knap 1 double click
-  condition: []
-  action:
+  conditions: []
+  actions:
   - choose:
     - conditions:
       - condition: trigger
@@ -885,7 +885,7 @@
         after: '15:00:00'
         before: 05:00:00
       sequence:
-      - service: scene.turn_on
+      - action: scene.turn_on
         target:
           entity_id: scene.bedroom_nightlight
         data:
@@ -899,11 +899,11 @@
         after: 05:00:00
         before: '15:00:00'
       sequence:
-      - service: scene.turn_on
+      - action: scene.turn_on
         target:
           entity_id: scene.bedroom_nightlight_skab
         data: {}
-      - service: scene.turn_on
+      - action: scene.turn_on
         target:
           entity_id: scene.bedroom_bright_skab
         data:
@@ -914,7 +914,7 @@
         id:
         - Bedroom rune knap 1 double click
       sequence:
-      - service: light.turn_off
+      - action: light.turn_off
         target:
           area_id: bedroom
         data: {}
@@ -925,12 +925,12 @@
         id:
         - Bedroom rune knap 1 long press
       sequence:
-      - service: scene.turn_on
+      - action: scene.turn_on
         target:
           entity_id: scene.bedroom_nightlight
         data:
           transition: 180
-      - service: light.turn_off
+      - action: light.turn_off
         target:
           area_id:
           - bathroom
@@ -940,7 +940,7 @@
           - office
           - staircase
         data: {}
-      - service: alarmo.arm
+      - action: alarmo.arm
         data:
           mode: home
           skip_delay: false
@@ -1027,12 +1027,12 @@
 - id: '1702478085025'
   alias: Office - Marie er hjemme
   description: ''
-  trigger:
+  triggers:
   - platform: state
     entity_id:
     - person.marie_overby
     to: home
-  condition:
+  conditions:
   - condition: and
     conditions:
     - condition: state
@@ -1051,13 +1051,13 @@
       - condition: state
         entity_id: light.office
         state: 'on'
-  action:
-  - service: light.turn_on
+  actions:
+  - action: light.turn_on
     target:
       entity_id: light.office
     data:
       flash: short
-  - service: input_boolean.turn_on
+  - action: input_boolean.turn_on
     target:
       entity_id: input_boolean.alexa_marie_er_hjemme
     data: {}
@@ -1066,7 +1066,7 @@
       minutes: 0
       seconds: 10
       milliseconds: 0
-  - service: input_boolean.turn_off
+  - action: input_boolean.turn_off
     target:
       entity_id: input_boolean.alexa_marie_er_hjemme
     data: {}
@@ -1234,7 +1234,7 @@
 - id: '1725883148605'
   alias: Køkken - køleskab åbent
   description: ''
-  trigger:
+  triggers:
   - type: opened
     platform: device
     device_id: 960de1dc1e0447c74e888c0dbe5d141c
@@ -1244,8 +1244,8 @@
       hours: 0
       minutes: 5
       seconds: 0
-  condition: []
-  action:
+  conditions: []
+  actions:
   - repeat:
       sequence:
       - device_id: 6b2348f85663897cf7acb6e717a396bd
@@ -1255,13 +1255,13 @@
         data:
           channel: Alert
           importance: high
-        title: Køkeskabet
+        title: Køleskabet
         enabled: true
-      - service: notify.mobile_app_maries_iphone_2
+      - action: notify.mobile_app_maries_iphone_2
         data:
           message: står åben
           title: Køleskabet
-      - service: input_boolean.turn_on
+      - action: input_boolean.turn_on
         data: {}
         target:
           entity_id: input_boolean.alexa_koleskab_abent
@@ -1280,15 +1280,15 @@
 - id: '1725883200618'
   alias: Køkken - køleskab lukket
   description: ''
-  trigger:
+  triggers:
   - type: not_opened
     platform: device
     device_id: 960de1dc1e0447c74e888c0dbe5d141c
     entity_id: e1f8180298e89deaed1087137217dc70
     domain: binary_sensor
-  condition: []
-  action:
-  - service: input_boolean.turn_off
+  conditions: []
+  actions:
+  - action: input_boolean.turn_off
     data: {}
     target:
       entity_id: input_boolean.alexa_koleskab_abent

@@ -1939,3 +1939,173 @@
   actions:
   - action: shell_command.git_backup
   mode: single
+- id: '1779452731411'
+  alias: Varme - Anna - Pause ved åbent vindue
+  description: Sætter gulvvarme på pause når et vindue er åbent i mere end 5 minutter.
+    Genoptager når alle vinduer er lukket, eller efter 4 timer.
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.anna_vindue_1_opening_2
+    - binary_sensor.anna_vindue_2_opening_2
+    to: 'on'
+    for:
+      minutes: 5
+  conditions: []
+  actions:
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.anna_thermostat
+    data:
+      hvac_mode: 'off'
+  - wait_for_trigger:
+    - trigger: template
+      value_template: "{{ is_state('binary_sensor.anna_vindue_1_opening_2', 'off')
+        and\n   is_state('binary_sensor.anna_vindue_2_opening_2', 'off') }}\n"
+    timeout:
+      hours: 4
+    continue_on_timeout: true
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.anna_thermostat
+    data:
+      hvac_mode: heat
+  mode: restart
+- id: '1779453027780'
+  alias: Varme - Køkken - Pause ved åben dør eller vindue
+  description: Sætter køkkenets gulvvarme på pause når en dør eller et vindue er åbent
+    i mere end 5 minutter. Genoptager når alle er lukket, eller efter 4 timer.
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.gang_vindue_1_opening_2
+    - binary_sensor.gang_vindue_2_opening_2
+    - binary_sensor.gang_bagdor_opening_2
+    - binary_sensor.kitchen_brandeskur_dor_opening_2
+    - binary_sensor.kitchen_terasse_dor_opening_2
+    to:
+    - 'on'
+    for:
+      minutes: 5
+  conditions: []
+  actions:
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.kitchen_thermostat
+    data:
+      hvac_mode: 'off'
+  - wait_for_trigger:
+    - trigger: template
+      value_template: "{{ is_state('binary_sensor.gang_vindue_1_opening_2', 'off')
+        and\n   is_state('binary_sensor.gang_vindue_2_opening_2', 'off') and\n   is_state('binary_sensor.gang_bagdor_opening_2',
+        'off') and\n   is_state('binary_sensor.kitchen_brandeskur_dor_opening_2',
+        'off') and\n   is_state('binary_sensor.kitchen_terasse_dor_opening_2', 'off')
+        }}\n"
+    timeout:
+      hours: 4
+    continue_on_timeout: true
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.kitchen_thermostat
+    data:
+      hvac_mode: heat
+  mode: restart
+- id: '1779453270498'
+  alias: Varme - Stue - Pause ved åbent vindue
+  description: Sætter stuens gulvvarme på pause når et vindue er åbent i mere end
+    5 minutter. Genoptager når alle vinduer er lukket, eller efter 4 timer.
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.living_room_brandeskur_vindue_1_opening_2
+    - binary_sensor.living_room_brandeskur_vindue_2_opening_2
+    - binary_sensor.living_room_brandeskur_vindue_3_opening_2
+    to: 'on'
+    for:
+      minutes: 5
+  conditions: []
+  actions:
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.stue
+    data:
+      hvac_mode: 'off'
+  - wait_for_trigger:
+    - trigger: template
+      value_template: "{{ is_state('binary_sensor.living_room_brandeskur_vindue_1_opening_2',
+        'off') and\n   is_state('binary_sensor.living_room_brandeskur_vindue_2_opening_2',
+        'off') and\n   is_state('binary_sensor.living_room_brandeskur_vindue_3_opening_2',
+        'off') }}\n"
+    timeout:
+      hours: 4
+    continue_on_timeout: true
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.stue
+    data:
+      hvac_mode: heat
+  mode: restart
+- id: '1779453305814'
+  alias: Varme - Soveværelse - Pause ved åben dør
+  description: Sætter soveværelsets gulvvarme på pause når yderdøren er åben i mere
+    end 5 minutter. Genoptager når døren er lukket, eller efter 4 timer.
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.bedroom_dor_opening_2
+    to: 'on'
+    for:
+      minutes: 5
+  conditions: []
+  actions:
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.bedroom_thermostat
+    data:
+      hvac_mode: 'off'
+  - wait_for_trigger:
+    - trigger: template
+      value_template: '{{ is_state(''binary_sensor.bedroom_dor_opening_2'', ''off'')
+        }}
+
+        '
+    timeout:
+      hours: 4
+    continue_on_timeout: true
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.bedroom_thermostat
+    data:
+      hvac_mode: heat
+  mode: restart
+- id: '1779453674001'
+  alias: Devices - Badeværelse - Ventilator styret af luftfugtighed
+  description: Tænder ventilator automatisk når luftfugtighed overstiger 65%. Slukker
+    når den falder under 55%.
+  triggers:
+  - trigger: numeric_state
+    entity_id: sensor.bathroom_thermometer_humidity
+    above: 65
+    id: fugtig
+  - trigger: numeric_state
+    entity_id: sensor.bathroom_thermometer_humidity
+    below: 55
+    id: tor
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: fugtig
+      sequence:
+      - action: switch.turn_on
+        target:
+          entity_id: switch.bathroom_ventilator
+    - conditions:
+      - condition: trigger
+        id: tor
+      sequence:
+      - action: switch.turn_off
+        target:
+          entity_id: switch.bathroom_ventilator
+  mode: single

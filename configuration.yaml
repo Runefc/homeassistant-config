@@ -8,3 +8,5 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+shell_command:
+  git_backup: 'bash -c "cd /config && git add . && git commit -m \"Auto backup $(date +%Y-%m-%d\ %H:%M)\" && git push || true"'

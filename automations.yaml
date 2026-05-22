@@ -62,7 +62,7 @@
   description: ''
   triggers:
   - type: opened
-    platform: device
+    trigger: device
     device_id: 011fb441f564c7fb40a4257bf2450234
     entity_id: b06fe5de9dccc4825cdbf03c12b5597f
     domain: binary_sensor
@@ -81,7 +81,7 @@
         data:
           channel: Alert
           importance: high
-        title: Fyseren
+        title: Fryseren
         enabled: true
       - action: notify.mobile_app_maries_iphone_2
         data:
@@ -132,7 +132,7 @@
   description: ''
   triggers:
   - type: not_opened
-    platform: device
+    trigger: device
     device_id: 011fb441f564c7fb40a4257bf2450234
     entity_id: b06fe5de9dccc4825cdbf03c12b5597f
     domain: binary_sensor
@@ -174,12 +174,10 @@
   conditions: []
   actions:
   - action: scene.turn_on
-    metadata: {}
     data: {}
     target:
       entity_id: scene.kitchen_bright
   - action: scene.turn_on
-    metadata: {}
     target:
       entity_id: scene.hallway_bright
     data: {}
@@ -191,18 +189,16 @@
   - at: 09:00:00
     trigger: time
   conditions:
-  - condition: and
-    conditions:
-    - condition: time
-      weekday:
-      - fri
-      - thu
-      - wed
-      - tue
-      - mon
-    - condition: state
-      entity_id: alarm_control_panel.alarmo
-      state: armed_away
+  - condition: time
+    weekday:
+    - fri
+    - thu
+    - wed
+    - tue
+    - mon
+  - condition: state
+    entity_id: alarm_control_panel.alarmo
+    state: armed_away
   actions:
   - device_id: 2e28a56699da38c983686f9bf0c80f6b
     domain: vacuum
@@ -213,7 +209,7 @@
   alias: Alarm - Hjemme - sluk 5.00
   description: ''
   triggers:
-  - platform: time
+  - trigger: time
     at: 05:00:00
   conditions:
   - condition: state
@@ -237,14 +233,12 @@
       seconds: 0
     trigger: state
   conditions:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: alarm_control_panel.alarmo
-      state: disarmed
-    - condition: time
-      after: '22:00:00'
-      before: 04:54:00
+  - condition: state
+    entity_id: alarm_control_panel.alarmo
+    state: disarmed
+  - condition: time
+    after: '22:00:00'
+    before: 04:54:00
   actions:
   - data:
       mode: home
@@ -258,7 +252,7 @@
   description: ''
   triggers:
   - type: turned_on
-    platform: device
+    trigger: device
     device_id: 79429dc8538e7945674da233bdddad35
     entity_id: 097b9f37d5d41243fb94140bc0987975
     domain: binary_sensor
@@ -333,7 +327,7 @@
   alias: Alarm - Notifikation
   description: ''
   triggers:
-  - platform: state
+  - trigger: state
     entity_id:
     - alarm_control_panel.alarmo
     to: triggered
@@ -367,7 +361,7 @@
   alias: Alarm - Sirene tænd
   description: ''
   triggers:
-  - platform: state
+  - trigger: state
     entity_id:
     - alarm_control_panel.alarmo
     to: triggered
@@ -400,13 +394,13 @@
   triggers:
   - device_id: fb1912b22c93921ae0d03fcd88d7c2ea
     domain: zha
-    platform: device
+    trigger: device
     type: remote_button_long_press
     subtype: remote_button_long_press
     id: Alarm knap long press
   - device_id: fb1912b22c93921ae0d03fcd88d7c2ea
     domain: zha
-    platform: device
+    trigger: device
     type: remote_button_short_press
     subtype: remote_button_short_press
     id: Alarm knap short press
@@ -689,7 +683,7 @@
   alias: Devices - Vand detekteret
   description: ''
   triggers:
-  - platform: state
+  - trigger: state
     entity_id:
     - binary_sensor.vand_sensor_helper
     to: 'on'
@@ -715,19 +709,19 @@
   triggers:
   - device_id: f5f6d79352a2e836d791d7470c8fae02
     domain: zha
-    platform: device
+    trigger: device
     type: remote_button_long_press
     subtype: remote_button_long_press
     id: Sofa Long press
   - device_id: f5f6d79352a2e836d791d7470c8fae02
     domain: zha
-    platform: device
+    trigger: device
     type: remote_button_short_press
     subtype: remote_button_short_press
     id: Sofa short press
   - device_id: f5f6d79352a2e836d791d7470c8fae02
     domain: zha
-    platform: device
+    trigger: device
     type: remote_button_double_press
     subtype: remote_button_double_press
     id: Sofa Double press
@@ -858,19 +852,19 @@
   triggers:
   - device_id: f7e043d58addc7b77277c767f020bef9
     domain: zha
-    platform: device
+    trigger: device
     type: remote_button_short_press
     subtype: remote_button_short_press
     id: Bedroom rune knap 1 short press
   - device_id: f7e043d58addc7b77277c767f020bef9
     domain: zha
-    platform: device
+    trigger: device
     type: remote_button_long_press
     subtype: remote_button_long_press
     id: Bedroom rune knap 1 long press
   - device_id: f7e043d58addc7b77277c767f020bef9
     domain: zha
-    platform: device
+    trigger: device
     type: remote_button_double_press
     subtype: remote_button_double_press
     id: Bedroom rune knap 1 double click
@@ -1028,29 +1022,23 @@
   alias: Office - Marie er hjemme
   description: ''
   triggers:
-  - platform: state
+  - trigger: state
     entity_id:
     - person.marie_overby
     to: home
   conditions:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: person.rune_christiansen
-      state: home
-    - condition: and
-      conditions:
-      - type: is_power
-        condition: device
-        device_id: 63382a4756b026b2ee95baa29528834e
-        entity_id: ee62d6436b821c78334b7ba7336ce9ef
-        domain: sensor
-        above: 20
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: light.office
-        state: 'on'
+  - condition: state
+    entity_id: person.rune_christiansen
+    state: home
+  - type: is_power
+    condition: device
+    device_id: 63382a4756b026b2ee95baa29528834e
+    entity_id: ee62d6436b821c78334b7ba7336ce9ef
+    domain: sensor
+    above: 20
+  - condition: state
+    entity_id: light.office
+    state: 'on'
   actions:
   - action: light.turn_on
     target:
@@ -1236,7 +1224,7 @@
   description: ''
   triggers:
   - type: opened
-    platform: device
+    trigger: device
     device_id: 960de1dc1e0447c74e888c0dbe5d141c
     entity_id: e1f8180298e89deaed1087137217dc70
     domain: binary_sensor
@@ -1282,7 +1270,7 @@
   description: ''
   triggers:
   - type: not_opened
-    platform: device
+    trigger: device
     device_id: 960de1dc1e0447c74e888c0dbe5d141c
     entity_id: e1f8180298e89deaed1087137217dc70
     domain: binary_sensor
@@ -1416,7 +1404,6 @@
         - Nat
       sequence:
       - action: climate.set_preset_mode
-        metadata: {}
         data:
           preset_mode: sleep
         target:
@@ -1432,7 +1419,6 @@
         - Morgen
       sequence:
       - action: climate.set_preset_mode
-        metadata: {}
         data:
           preset_mode: home
         target:
@@ -1559,7 +1545,6 @@
     state: 'on'
   actions:
   - action: light.turn_off
-    metadata: {}
     data: {}
     target:
       entity_id: light.all_lights

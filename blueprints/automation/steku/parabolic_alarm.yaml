@@ -1,0 +1,267 @@
+blueprint:
+  name: Parabolic Alarm Automation
+  description: Turn a light on based on a start time, whether it is a workday and
+    whether a person is home. This is to match the sunrise and allow for a natural
+    wake up.
+  domain: automation
+  input:
+    pre_action:
+      name: "\U0001F3AE Pre Script Action"
+      description: An action you want to perform before the lights turn on.
+      default: []
+      selector:
+        action: {}
+    alarm_start_time:
+      name: "\U0001F552 Start Time"
+      description: Datetime helper or sensor for the alarm to start. Use time only
+        and Workday sensor to determine what days to run.
+      selector:
+        entity:
+          filter:
+          - domain:
+            - input_datetime
+          - domain:
+            - sensor
+            device_class:
+            - timestamp
+          multiple: false
+    offset_from_start_time:
+      name: "\U0001F3C1 Offset From Start Time"
+      description: Adjust the amount of time before or after the set Start Time value
+        to start the transition. Enter seconds or HH:MM:SS format (e.g. "-00:05:00"
+        to start 5 minutes before the Start Time. Useful if the start time comes from
+        an alarm entity and you want to adjust where in the brightness cycle you are
+        when the alarm goes off. See https://www.home-assistant.io/docs/automation/trigger/#sensors-of-datetime-device-class-with-offsets
+        for caution about using positive offsets.
+      default: -00:00:00
+      selector:
+        text: {}
+    workday_sensor:
+      name: "\U0001F4C6 Workday Sensor"
+      description: Binary Sensor that is used to determine whether it should run.
+        Typically from Workday Integration. More information here - https://www.home-assistant.io/integrations/workday/
+      selector:
+        entity:
+          filter:
+          - domain:
+            - binary_sensor
+          multiple: false
+    person_sensor:
+      name: "\U0001F464 Person Sensor"
+      description: Select the person sensor so that the alarm will only run when you
+        are home.
+      selector:
+        entity:
+          filter:
+          - domain:
+            - person
+          multiple: false
+    alarm_script:
+      name: "\U0001F4C4 Script to trigger"
+      description: Light Alarm Script
+      selector:
+        entity:
+          filter:
+          - domain:
+            - script
+          multiple: false
+    target_light:
+      name: "\U0001F4A1 Lights"
+      description: The light(s) with kelvin
+      selector:
+        entity:
+          filter:
+          - domain:
+            - light
+          multiple: false
+    light_timeout:
+      name: ⏱️ Timeout
+      description: Light will turn off after this time on last run. Setting this to
+        0 will leave the light on.
+      default: 10
+      selector:
+        number:
+          min: 0.0
+          max: 60.0
+          step: 1.0
+          mode: slider
+    steps_per_minute:
+      name: "\U0001F3C3‍♂️ Steps per minute for all runs"
+      description: Used for configuring percentage of each step for brightness and
+        color temperature
+      default: 12
+      selector:
+        number:
+          min: 1.0
+          max: 60.0
+          step: 1.0
+          mode: slider
+    start_brightness:
+      name: ⭐️ Start Brightness
+      description: Starting value for brightness
+      selector:
+        number:
+          min: 1.0
+          max: 100.0
+          step: 1.0
+          mode: slider
+      default: 1.0
+    start_kelvin_temp:
+      description: Start Kelvin value (warm) for 1st run
+      selector:
+        color_temp:
+          unit: kelvin
+      default: 2500
+      name: ☀️ Starting Kelvin
+    target_kelvin_1:
+      description: Target Kelvin value (cold) for the end of the first run
+      selector:
+        color_temp:
+          unit: kelvin
+      default: 3000
+      name: ☀️ Target Kelvin 1
+    max_brightness_1:
+      name: ⭐️ Maximum Brightness 1
+      description: Finish value for first run
+      selector:
+        number:
+          min: 1.0
+          max: 100.0
+          step: 1.0
+          mode: slider
+      default: 10
+    alarm_length_1:
+      name: ⏰ Alarm Length 1
+      description: This is the start to finish time for the first run
+      selector:
+        number:
+          min: 1.0
+          max: 60.0
+          step: 1.0
+          mode: slider
+      default: 10
+    target_kelvin_2:
+      description: Target Kelvin value (cold) for second run
+      selector:
+        color_temp:
+          unit: kelvin
+      default: 4000
+      name: "\U0001F317 Target Kelvin 2"
+    max_brightness_2:
+      name: ⭐️ Maximum Brightness 2
+      description: Finish value for second run
+      selector:
+        number:
+          min: 1.0
+          max: 100.0
+          step: 1.0
+          mode: slider
+      default: 50
+    alarm_length_2:
+      name: ⏰ Alarm length 2
+      description: This is the start to finish time for the second run
+      selector:
+        number:
+          min: 1.0
+          max: 60.0
+          step: 1.0
+          mode: slider
+      default: 10
+    target_kelvin_3:
+      description: Target Kelvin value (cold) for third run
+      selector:
+        color_temp:
+          unit: kelvin
+      default: 6500
+      name: "\U0001F311 Target Kelvin 3"
+    max_brightness_3:
+      name: ⭐️ Maximum Brightness 3
+      description: Finish value for third and final run
+      selector:
+        number:
+          min: 1.0
+          max: 100.0
+          step: 1.0
+          mode: slider
+      default: 100
+    alarm_length_3:
+      name: ⏰ Alarm Length 3
+      description: This is the start to finish time for the third run
+      selector:
+        number:
+          min: 1.0
+          max: 60.0
+          step: 1.0
+          mode: slider
+      default: 5
+    post_action:
+      name: "\U0001F3AE Post Script Action"
+      description: An action you want to run after the script has finished
+      default: []
+      selector:
+        action: {}
+  source_url: https://github.com/steku/ha_cercadian_alarm/blob/main/parabolic_alarm.yaml
+trigger:
+- trigger: time
+  at:
+    entity_id: !input alarm_start_time
+    offset: !input offset_from_start_time
+condition:
+- condition: state
+  entity_id: !input workday_sensor
+  state: 'on'
+- condition: state
+  entity_id: !input person_sensor
+  state: home
+action:
+- choose:
+  - conditions: []
+    sequence: !input pre_action
+- action: light.turn_on
+  data:
+    color_temp_kelvin: !input start_kelvin_temp
+    brightness_pct: !input start_brightness
+    entity_id: !input target_light
+- delay:
+    seconds: 5
+- action: !input alarm_script
+  data:
+    target_kelvin: !input target_kelvin_1
+    start_kelvin: !input start_kelvin_temp
+    max_brightness_pct: !input max_brightness_1
+    alarm_length: !input alarm_length_1
+    steps_per_minute: !input steps_per_minute
+    light_timeout: 0
+    target_light: !input target_light
+- if:
+  - condition: state
+    state: 'on'
+    entity_id: !input target_light
+  then:
+  - action: !input alarm_script
+    data:
+      target_kelvin: !input target_kelvin_2
+      start_kelvin: !input target_kelvin_1
+      max_brightness_pct: !input max_brightness_2
+      alarm_length: !input alarm_length_2
+      steps_per_minute: !input steps_per_minute
+      light_timeout: 0
+      target_light: !input target_light
+- if:
+  - condition: state
+    state: 'on'
+    entity_id: !input target_light
+  then:
+  - action: !input alarm_script
+    data:
+      target_kelvin: !input target_kelvin_3
+      start_kelvin: !input target_kelvin_2
+      max_brightness_pct: !input max_brightness_3
+      alarm_length: !input alarm_length_3
+      steps_per_minute: !input steps_per_minute
+      light_timeout: !input light_timeout
+      target_light: !input target_light
+  - choose:
+    - conditions: []
+      sequence: !input post_action
+mode: single

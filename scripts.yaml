@@ -1,0 +1,60 @@
+'1702398139596':
+  alias: Notifikation - Start opvasker
+  use_blueprint:
+    path: homeassistant/confirmable_notification.yaml
+    input:
+      notify_device: 6b2348f85663897cf7acb6e717a396bd
+      title: Opvasker
+      message: Ikke tændt - Er den fyldt og skal startes?
+      confirm_text: Ja
+      dismiss_text: Nej
+      confirm_action:
+      - delay:
+          hours: 3
+          minutes: 0
+          seconds: 0
+          milliseconds: 0
+      - type: turn_on
+        device_id: 8106b6292e9f69e717fc9c700abf119b
+        entity_id: 016c287f22eec2188bbb6a6e9535ff91
+        domain: switch
+light_sunrise:
+  alias: Light Sunrise
+  use_blueprint:
+    path: steku/parabolic_alarm_script.yaml
+  description: ''
+lys_putning_scene:
+  alias: Putning scene
+  sequence:
+  - repeat:
+      for_each:
+      - entity: light.living_room
+        brightness: 141
+        color_temp_kelvin: 2237
+      - entity: light.kitchen
+        brightness: 103
+        color_temp_kelvin: 2702
+      - entity: light.staircase
+        brightness: 77
+        color_temp_kelvin: 2702
+      - entity: light.bathroom
+        brightness: 77
+        color_temp_kelvin: 2710
+      - entity: light.hallway_4
+        brightness: 104
+        color_temp_kelvin: 2710
+      sequence:
+      - if:
+        - condition: template
+          value_template: '{{ is_state(repeat.item.entity, ''on'') }}'
+        then:
+        - action: light.turn_on
+          target:
+            entity_id: '{{ repeat.item.entity }}'
+          data:
+            brightness: '{{ repeat.item.brightness }}'
+            color_temp_kelvin: '{{ repeat.item.color_temp_kelvin }}'
+            transition: 300
+        - delay:
+            milliseconds: 500
+  mode: single

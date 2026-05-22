@@ -1,0 +1,165 @@
+2026-04-21 13:46:33.646 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration alarmo which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-04-21 13:46:33.647 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration watchman which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-04-21 13:46:33.649 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration nordpool which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-04-21 13:46:33.650 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration alexa_media which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-04-21 13:46:33.651 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-04-21 13:46:33.652 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration bambu_lab which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-04-21 13:46:33.653 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration spotifyplus which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-04-21 13:46:33.655 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration bambu_lab_p1_spaghetti_detection which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-04-21 13:46:35.230 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
+2026-04-21 13:46:46.511 WARNING (SyncWorker_5) [homeconnect] Token expired.
+2026-04-21 13:46:47.890 ERROR (MainThread) [homeassistant.components.home_connect.switch] An error occurred: {'description': 'HomeAppliance is offline', 'key': 'SDK.Error.HomeAppliance.Connection.Initialization.Failed'}
+2026-04-21 13:46:49.123 ERROR (P1S-Mqtt-125) [custom_components.bambu_lab.pybambu] Connection failed with error code: 401
+2026-04-21 13:47:03.057 WARNING (MainThread) [aiohue.util] Value {'points': [], 'mode': 'interpolated_palette', 'points_capable': 5, 'mode_values': ['interpolated_palette', 'interpolated_palette_mirrored', 'random_pixelated', 'segmented_palette'], 'pixel_count': 7} of type <class 'dict'> is invalid for Light.gradient, expected value of type aiohue.v2.models.feature.GradientFeature | None
+2026-04-21 13:48:59.306 ERROR (Thread-3 (_thread_main)) [roborock.cloud_api] [Roborock S7] failed to receive on socket: [Errno 104] Connection reset by peer
+2026-04-21 13:48:59.310 WARNING (Thread-3 (_thread_main)) [roborock.cloud_api] [Roborock S7] The connection was lost.
+2026-04-21 13:50:37.550 WARNING (Thread-10 (_listen)) [homeconnect.sseclient] Exception while reading event: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/urllib3/response.py", line 444, in _error_catcher
+    yield
+  File "/usr/local/lib/python3.13/site-packages/urllib3/response.py", line 828, in read_chunked
+    self._update_chunk_length()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/urllib3/response.py", line 758, in _update_chunk_length
+    line = self._fp.fp.readline()
+  File "/usr/local/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/usr/local/lib/python3.13/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/urllib3/response.py", line 816, in read_chunked
+    with self._error_catcher():
+         ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/urllib3/response.py", line 449, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.")
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.home-connect.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeconnect/sseclient.py", line 82, in __next__
+    next_chunk = next(self.resp_iterator)
+  File "/usr/local/lib/python3.13/site-packages/requests/models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.home-connect.com', port=443): Read timed out.
+2026-04-21 13:50:51.941 ERROR (MainThread) [snitun.multiplexer.core] Ping fails, no response from peer
+2026-04-21 13:51:50.547 WARNING (MainThread) [bellows.thread] Attempted to use a closed event loop
+2026-04-21 13:51:50.548 WARNING (MainThread) [zigpy.application] Watchdog failure
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/zigpy/application.py", line 661, in _watchdog_loop
+    await self.watchdog_feed()
+  File "/usr/local/lib/python3.13/site-packages/zigpy/application.py", line 647, in watchdog_feed
+    await self._watchdog_feed()
+  File "/usr/local/lib/python3.13/site-packages/bellows/zigbee/application.py", line 920, in _watchdog_feed
+    current_counters = await self._ezsp.read_counters()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/bellows/ezsp/v4/__init__.py", line 191, in read_counters
+    (res,) = await self.readCounters()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/bellows/ezsp/protocol.py", line 126, in command
+    await self._gw.send_data(data)
+TypeError: object NoneType can't be used in 'await' expression
+2026-04-21 13:51:50.559 WARNING (MainThread) [bellows.thread] Attempted to use a closed event loop
+2026-04-21 13:51:50.564 WARNING (MainThread) [zha.decorators] [<Task pending name='sensor_state_poller_a4:c1:38:3a:f2:5c:ea:97-1-1794-summation_delivered_PolledSmartEnergySummation' coro=<periodic.<locals>.scheduler.<locals>.wrapper() running at /usr/local/lib/python3.13/site-packages/zha/decorators.py:92> cb=[set.remove()]>] Failed to poll using method [zha.application.platforms.sensor::PollableSensor._refresh]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/zha/decorators.py", line 83, in wrapper
+    await func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/zha/application/platforms/sensor/__init__.py", line 369, in _refresh
+    await self.async_update()
+  File "/usr/local/lib/python3.13/site-packages/zha/application/platforms/__init__.py", line 422, in async_update
+    await asyncio.gather(*tasks)
+  File "/usr/local/lib/python3.13/site-packages/zha/zigbee/cluster_handlers/smartenergy.py", line 323, in async_update
+    result = await self.get_attributes(attrs, from_cache=False, only_cache=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/zha/zigbee/cluster_handlers/__init__.py", line 587, in _get_attributes
+    read, _ = await self.cluster.read_attributes(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/zigpy/zcl/__init__.py", line 573, in read_attributes
+    result = await self.read_attributes_raw(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        to_read, manufacturer=manufacturer, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/zigpy/quirks/__init__.py", line 327, in read_attributes_raw
+    results = await super().read_attributes_raw(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        attrs_to_read, manufacturer=manufacturer, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/zigpy/quirks/__init__.py", line 372, in _read_attributes
+    return await super()._read_attributes(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        attribute_ids, *args, manufacturer=manufacturer, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/zigpy/zcl/__init__.py", line 375, in request
+    return await self._endpoint.request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/zigpy/endpoint.py", line 270, in request
+    return await self.device.request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/zigpy/device.py", line 378, in request
+    await send_request()
+  File "/usr/local/lib/python3.13/site-packages/zigpy/application.py", line 835, in request
+    await self.send_packet(
+    ...<14 lines>...
+    )
+  File "/usr/local/lib/python3.13/site-packages/bellows/zigbee/application.py", line 789, in send_packet
+    status, _ = await self._ezsp.send_unicast(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/bellows/ezsp/v4/__init__.py", line 137, in send_unicast
+    status, sequence = await self.sendUnicast(
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/bellows/ezsp/protocol.py", line 126, in command
+    await self._gw.send_data(data)
+TypeError: object NoneType can't be used in 'await' expression
+2026-04-21 13:51:50.583 WARNING (MainThread) [bellows.thread] Attempted to use a closed event loop
+2026-04-21 13:51:50.583 WARNING (MainThread) [zigpy.application] Failed to disconnect from radio
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/zigpy/application.py", line 425, in shutdown
+    await self.disconnect()
+  File "/usr/local/lib/python3.13/site-packages/bellows/zigbee/application.py", line 454, in disconnect
+    await self._ezsp.disconnect()
+  File "/usr/local/lib/python3.13/site-packages/bellows/ezsp/__init__.py", line 205, in disconnect
+    await self._gw.disconnect()
+TypeError: object NoneType can't be used in 'await' expression
+2026-04-21 13:52:35.740 ERROR (bellows.thread_0) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/bellows/ash.py", line 656, in _send_data_frame
+    await ack_future
+RuntimeError: Connection has been closed

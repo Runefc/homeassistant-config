@@ -16,3 +16,8 @@ backups/
 deps/
 .vscode/
 .idea/
+.ha_run.lock
+.cache/
+onlineBackupsData/
+.shopping_list.json
+image/

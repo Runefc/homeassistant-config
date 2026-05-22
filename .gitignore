@@ -4,6 +4,11 @@ home-assistant_v2.db
 home-assistant_v2.db-shm
 home-assistant_v2.db-wal
 home-assistant.log
+watchman_report.txt
+light_profiles.csv
+zigbee.db
+zigbee.db-shm
+zigbee.db-wal
 .storage/
 .cloud/
 .google.token

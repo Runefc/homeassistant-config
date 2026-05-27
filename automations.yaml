@@ -2109,3 +2109,41 @@
         target:
           entity_id: switch.bathroom_ventilator
   mode: single
+- id: '1779780404529'
+  alias: Devices - Subwoofer strøm
+  description: ''
+  triggers:
+  - device_id: 9ceecd74c268965d4cde2b2a0aa1e962
+    domain: media_player
+    entity_id: 285151e565f82c938b653bdd58a7c310
+    type: turned_on
+    trigger: device
+    id: DenonOn
+  - device_id: 9ceecd74c268965d4cde2b2a0aa1e962
+    domain: media_player
+    entity_id: 285151e565f82c938b653bdd58a7c310
+    type: turned_off
+    trigger: device
+    id: DenonOff
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - DenonOn
+      sequence:
+      - type: turn_on
+        device_id: 1228fa0339a7031460066c7bc1a1048d
+        entity_id: 54deaf1282bd6c04b531445fbaebbe0d
+        domain: switch
+    - conditions:
+      - condition: trigger
+        id:
+        - DenonOff
+      sequence:
+      - type: turn_off
+        device_id: 1228fa0339a7031460066c7bc1a1048d
+        entity_id: 54deaf1282bd6c04b531445fbaebbe0d
+        domain: switch
+  mode: single

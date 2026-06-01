@@ -1770,8 +1770,7 @@
   mode: single
 - id: '1747000000001'
   alias: Alarm - Kan ikke armeres - notifikation
-  description: Sends a notification listing which sensors are blocking Alarmo from
-    arming
+  description: Notifies which sensors are blocking Alarmo from arming
   triggers:
   - trigger: event
     event_type: alarmo_failed_to_arm
@@ -1784,7 +1783,9 @@
       channel: Alert
       importance: high
     title: 'Alarm: Kan ikke armeres'
-    message: ' '
+    message: '{% set sensors = trigger.event.data.sensors | default([]) -%} {% if
+      sensors -%} Følgende er åbne: {{ sensors | expand | map(attribute=''name'')
+      | list | join('', '') }} {%- else -%} Ukendt grund — tjek Alarmo {%- endif %}'
   mode: single
 - id: vacation_activate
   alias: Ferie - Aktiver
@@ -1963,7 +1964,7 @@
       value_template: "{{ is_state('binary_sensor.anna_vindue_1_opening_2', 'off')
         and\n   is_state('binary_sensor.anna_vindue_2_opening_2', 'off') }}\n"
     timeout:
-      hours: 4
+      hours: 6
     continue_on_timeout: true
   - action: climate.set_hvac_mode
     target:
@@ -2002,7 +2003,7 @@
         'off') and\n   is_state('binary_sensor.kitchen_terasse_dor_opening_2', 'off')
         }}\n"
     timeout:
-      hours: 4
+      hours: 6
     continue_on_timeout: true
   - action: climate.set_hvac_mode
     target:
@@ -2037,7 +2038,7 @@
         'off') and\n   is_state('binary_sensor.living_room_brandeskur_vindue_3_opening_2',
         'off') }}\n"
     timeout:
-      hours: 4
+      hours: 6
     continue_on_timeout: true
   - action: climate.set_hvac_mode
     target:
@@ -2070,7 +2071,7 @@
 
         '
     timeout:
-      hours: 4
+      hours: 6
     continue_on_timeout: true
   - action: climate.set_hvac_mode
     target:
@@ -2146,4 +2147,85 @@
         device_id: 1228fa0339a7031460066c7bc1a1048d
         entity_id: 54deaf1282bd6c04b531445fbaebbe0d
         domain: switch
+  mode: single
+- id: '1780256922299'
+  alias: Varme - Kontor - Pause ved åbent vindue
+  description: Sætter kontorets gulvvarme på pause når et vindue er åbent i mere end
+    5 minutter. Genoptager når vinduet er lukket, eller efter 4 timer.
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.office_vindue_gavl
+    to: 'on'
+    for:
+      minutes: 5
+  conditions: []
+  actions:
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.office_thermostat
+    data:
+      hvac_mode: 'off'
+  - wait_for_trigger:
+    - trigger: template
+      value_template: '{{ is_state(''binary_sensor.office_vindue_gavl'', ''off'')
+        }}'
+    timeout:
+      hours: 6
+    continue_on_timeout: true
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.office_thermostat
+    data:
+      hvac_mode: heat
+  mode: restart
+- id: '1780256940798'
+  alias: Varme - Gæsteværelse - Pause ved åbent vindue
+  description: Sætter gæsteværelsets gulvvarme på pause når et vindue er åbent i mere
+    end 5 minutter. Genoptager når alle vinduer er lukket, eller efter 4 timer.
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.gaestevaerelse_vindue_1
+    - binary_sensor.gaestevaerelse_vindue_2
+    to: 'on'
+    for:
+      minutes: 5
+  conditions: []
+  actions:
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.guest_room_thermostat
+    data:
+      hvac_mode: 'off'
+  - wait_for_trigger:
+    - trigger: template
+      value_template: '{{ is_state(''binary_sensor.gaestevaerelse_vindue_1'', ''off'')
+        and is_state(''binary_sensor.gaestevaerelse_vindue_2'', ''off'') }}'
+    timeout:
+      hours: 4
+    continue_on_timeout: true
+  - action: climate.set_hvac_mode
+    target:
+      entity_id: climate.guest_room_thermostat
+    data:
+      hvac_mode: heat
+  mode: restart
+- id: '1780261853707'
+  alias: Alarm - Sluk når telefon tilslutter hjem-wifi
+  description: Disarm Alarmo when either phone connects to home SSID
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.runes_iphone_ssid
+    - sensor.maries_iphone_2_ssid
+    to: MarieogRune
+  conditions:
+  - condition: state
+    entity_id: alarm_control_panel.alarmo
+    state: armed_away
+  actions:
+  - action: alarmo.disarm
+    data:
+      entity_id: alarm_control_panel.alarmo
   mode: single

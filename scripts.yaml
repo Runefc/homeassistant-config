@@ -38,3 +38,22 @@ lys_putning_scene:
         - delay:
             milliseconds: 500
   mode: single
+tjek_alarm_status:
+  alias: Tjek alarm-status
+  sequence:
+  - device_id: 6b2348f85663897cf7acb6e717a396bd
+    domain: mobile_app
+    type: notify
+    data:
+      channel: Alert
+      importance: high
+    title: 'Alarm: Status'
+    message: "{%- set ns = namespace(names=[]) -%} {%- for s in states.binary_sensor
+      if s.state == 'on' -%}\n  {%- set dc = s.attributes.device_class | default('')
+      -%}\n  {%- if dc in ['door', 'window', 'opening', 'garage_door']\n       or
+      'dor' in s.entity_id\n       or 'vindue' in s.entity_id -%}\n    {%- set ns.names
+      = ns.names + [s.name] -%}\n  {%- endif -%}\n{%- endfor -%} {% if ns.names |
+      count > 0 -%} Følgende er åbne: {{ ns.names | join(', ') }} {%- else -%} Klar
+      til at armere — ingen åbne sensorer {%- endif %}"
+  mode: single
+  description: ''

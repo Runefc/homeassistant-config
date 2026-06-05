@@ -2217,9 +2217,9 @@
   triggers:
   - trigger: state
     entity_id:
-    - sensor.runes_iphone_ssid
-    - sensor.maries_iphone_2_ssid
-    to: MarieogRune
+    - sensor.rune_telefon_wifi_connection
+    to:
+    - MarieogRune
   conditions:
   - condition: state
     entity_id: alarm_control_panel.alarmo

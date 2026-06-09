@@ -2089,8 +2089,9 @@
     above: 65
     id: fugtig
   - trigger: numeric_state
-    entity_id: sensor.bathroom_thermometer_humidity
-    below: 55
+    entity_id:
+    - sensor.bathroom_thermometer_humidity
+    below: 60
     id: tor
   conditions: []
   actions:

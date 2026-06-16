@@ -2157,7 +2157,10 @@
   - trigger: state
     entity_id:
     - binary_sensor.office_vindue_gavl
-    to: 'on'
+    - binary_sensor.office_skraa_1
+    - binary_sensor.office_skraa_2
+    to:
+    - 'on'
     for:
       minutes: 5
   conditions: []

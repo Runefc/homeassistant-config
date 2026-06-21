@@ -972,12 +972,13 @@
   triggers:
   - entity_id:
     - zone.home
-    to: '0'
+    to:
+    - '0'
     trigger: state
     for:
       hours: 0
-      minutes: 0
-      seconds: 30
+      minutes: 5
+      seconds: 0
   conditions:
   - condition: state
     entity_id: input_boolean.alexa_guest_mode
@@ -2021,7 +2022,9 @@
     - binary_sensor.living_room_brandeskur_vindue_1_opening_2
     - binary_sensor.living_room_brandeskur_vindue_2_opening_2
     - binary_sensor.living_room_brandeskur_vindue_3_opening_2
-    to: 'on'
+    - binary_sensor.kitchen_brandeskur_dor_opening_2
+    to:
+    - 'on'
     for:
       minutes: 5
   conditions: []

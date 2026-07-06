@@ -1,0 +1,511 @@
+===== DATE =====
+Sun Jul  5 23:46:59 CEST 2026
+
+===== HA OS INFO =====
+board: ova
+boot: B
+boot_slots:
+  A:
+    state: inactive
+    status: good
+    version: "17.2"
+  B:
+    state: booted
+    status: good
+    version: "17.3"
+data_disk: QEMU-QEMU-HARDDISK-drive-scsi0
+update_available: true
+version: "17.3"
+version_latest: "18.1"
+
+===== HA HOST INFO =====
+agent_version: 1.8.1
+apparmor_version: 3.1.7
+boot_timestamp: 1783285234051943
+broadcast_llmnr: true
+broadcast_mdns: true
+chassis: vm
+cpe: cpe:2.3:o:home-assistant:haos:17.3:*::*:*:*:ova:*
+deployment: ""
+disk_free: 68.3
+disk_life_time: null
+disk_total: 89.8
+disk_used: 17.8
+dt_synchronized: true
+dt_utc: "2026-07-05T21:46:59.268841+00:00"
+features:
+- reboot
+- shutdown
+- services
+- network
+- hostname
+- timedate
+- os_agent
+- haos
+- resolved
+- journal
+- disk
+- mount
+hostname: homeassistant
+kernel: 6.12.85-haos
+llmnr_hostname: homeassistant
+operating_system: Home Assistant OS 17.3
+startup_time: 2.073875
+timezone: Europe/Copenhagen
+use_ntp: true
+virtualization: kvm
+
+===== HA CORE INFO =====
+arch: amd64
+audio_input: null
+audio_output: null
+backups_exclude_database: false
+boot: true
+duplicate_log_file: false
+image: ghcr.io/home-assistant/qemux86-64-homeassistant
+ip_address: 172.30.32.1
+machine: qemux86-64
+port: 8123
+ssl: false
+update_available: true
+version: 2026.5.4
+version_latest: 2026.7.1
+watchdog: true
+
+===== HA SUPERVISOR INFO =====
+addons:
+- icon: true
+  name: Matter Server
+  repository: core
+  slug: core_matter_server
+  state: started
+  update_available: true
+  version: 8.5.0
+  version_latest: 9.0.4
+- icon: true
+  name: Advanced SSH & Web Terminal
+  repository: a0d7b954
+  slug: a0d7b954_ssh
+  state: started
+  update_available: true
+  version: 23.0.9
+  version_latest: 24.0.1
+- icon: true
+  name: Network UPS Tools
+  repository: a0d7b954
+  slug: a0d7b954_nut
+  state: started
+  update_available: false
+  version: 0.18.0
+  version_latest: 0.18.0
+- icon: true
+  name: Z-Wave JS
+  repository: core
+  slug: core_zwave_js
+  state: started
+  update_available: true
+  version: 1.3.0
+  version_latest: 1.5.0
+- icon: true
+  name: Studio Code Server
+  repository: a0d7b954
+  slug: a0d7b954_vscode
+  state: started
+  update_available: false
+  version: 6.0.1
+  version_latest: 6.0.1
+- icon: true
+  name: OneDrive Backup
+  repository: de91e161
+  slug: de91e161_hassio_onedrive_backup
+  state: started
+  update_available: false
+  version: 2.3.10
+  version_latest: 2.3.10
+- icon: true
+  name: File editor
+  repository: core
+  slug: core_configurator
+  state: started
+  update_available: false
+  version: 6.0.0
+  version_latest: 6.0.0
+addons_repositories:
+- name: Local apps
+  slug: local
+- name: Bambu Lab P1 - Spaghetti Detection
+  slug: 3d1cb10b
+- name: Home Assistant Onedrive Backup Repository (Preview)
+  slug: de91e161
+- name: Official apps
+  slug: core
+- name: Music Assistant
+  slug: d5369777
+- name: Home Assistant Community Apps
+  slug: a0d7b954
+- name: ESPHome
+  slug: 5c53de3b
+arch: amd64
+auto_update: true
+channel: stable
+country: DK
+debug: false
+debug_block: false
+detect_blocking_io: false
+diagnostics: null
+feature_flags:
+  supervisor_v2_api: false
+healthy: true
+ip_address: 172.30.32.2
+logging: info
+supported: true
+timezone: Europe/Copenhagen
+update_available: false
+version: 2026.06.2
+version_latest: 2026.06.2
+wait_boot: 5
+
+===== DISK SPACE =====
+Filesystem                Size      Used Available Use% Mounted on
+overlay                  89.8G     17.8G     68.3G  21% /
+/dev/sda8                89.8G     17.8G     68.3G  21% /share
+/dev/sda8                89.8G     17.8G     68.3G  21% /addon_configs
+/dev/sda8                89.8G     17.8G     68.3G  21% /ssl
+/dev/sda8                89.8G     17.8G     68.3G  21% /media
+/dev/sda8                89.8G     17.8G     68.3G  21% /data
+/dev/sda8                89.8G     17.8G     68.3G  21% /addons
+/dev/sda8                89.8G     17.8G     68.3G  21% /homeassistant
+devtmpfs                  5.8G         0      5.8G   0% /dev
+tmpfs                     5.8G         0      5.8G   0% /dev/shm
+/dev/sda8                89.8G     17.8G     68.3G  21% /backup
+tmpfs                     2.3G      1.4M      2.3G   0% /run/dbus
+tmpfs                     5.8G         0      5.8G   0% /dev/shm
+/dev/sda8                89.8G     17.8G     68.3G  21% /etc/asound.conf
+/dev/sda8                89.8G     17.8G     68.3G  21% /run/audio
+/dev/sda8                89.8G     17.8G     68.3G  21% /run/cid
+/dev/sda8                89.8G     17.8G     68.3G  21% /etc/resolv.conf
+/dev/sda8                89.8G     17.8G     68.3G  21% /etc/hostname
+/dev/sda8                89.8G     17.8G     68.3G  21% /etc/hosts
+/dev/sda8                89.8G     17.8G     68.3G  21% /etc/pulse/client.conf
+/dev/sda8                89.8G     17.8G     68.3G  21% /var/log/journal
+tmpfs                     2.3G      1.4M      2.3G   0% /run/log/journal
+tmpfs                     5.8G         0      5.8G   0% /proc/acpi
+tmpfs                     5.8G         0      5.8G   0% /proc/asound
+devtmpfs                  5.8G         0      5.8G   0% /proc/interrupts
+devtmpfs                  5.8G         0      5.8G   0% /proc/kcore
+devtmpfs                  5.8G         0      5.8G   0% /proc/keys
+tmpfs                     5.8G         0      5.8G   0% /proc/scsi
+devtmpfs                  5.8G         0      5.8G   0% /proc/timer_list
+tmpfs                     5.8G         0      5.8G   0% /sys/firmware
+
+===== MEMORY =====
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       1.5Gi       8.6Gi        37Mi       1.7Gi        10Gi
+Swap:          3.9Gi          0B       3.9Gi
+
+===== CORE LOGS =====
+    )
+    ^
+  File "/usr/local/lib/python3.14/site-packages/zigpy/device.py", line 652, in request
+    await send_request()
+  File "/usr/local/lib/python3.14/site-packages/zigpy/application.py", line 1094, in request
+    await self.send_packet(
+    ...<14 lines>...
+    )
+  File "/usr/local/lib/python3.14/site-packages/bellows/zigbee/application.py", line 1098, in send_packet
+    raise zigpy.exceptions.DeliveryError(
+        f"Failed to deliver message: {send_status!r}", send_status
+    )
+zigpy.exceptions.DeliveryError: Failed to deliver message: <sl_Status.ZIGBEE_DELIVERY_FAILED: 3074>[0m
+[31m2026-07-03 20:22:01.652 ERROR (MainThread) [homeassistant.components.spotify.coordinator] Error requesting spotify data: Cannot connect to host api.spotify.com:443 ssl:default [Timeout while contacting DNS servers][0m
+[33m2026-07-03 20:38:20.714 WARNING (MainThread) [zigpy.application] Device <CustomDeviceV2 model='SBTZB-110' manuf='frient A/S' nwk=0x4BFF ieee=00:15:bc:00:39:00:43:8b is_initialized=True> callback failed - DeliveryError('Failed to deliver message: <sl_Status.ZIGBEE_DELIVERY_FAILED: 3074>')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.14/site-packages/zigpy/application.py", line 109, in _async_callback
+    await callback(*args, **kwargs)
+  File "/usr/local/lib/python3.14/site-packages/zigpy/device.py", line 430, in poll_control_checkin_callback
+    await poll_control.checkin_response(
+    ...<5 lines>...
+    )
+  File "/usr/local/lib/python3.14/site-packages/zigpy/zcl/__init__.py", line 782, in request
+    return await self._endpoint.request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.14/site-packages/zigpy/endpoint.py", line 229, in request
+    return await self.device.request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.14/site-packages/zigpy/device.py", line 652, in request
+    await send_request()
+  File "/usr/local/lib/python3.14/site-packages/zigpy/application.py", line 1094, in request
+    await self.send_packet(
+    ...<14 lines>...
+    )
+  File "/usr/local/lib/python3.14/site-packages/bellows/zigbee/application.py", line 1098, in send_packet
+    raise zigpy.exceptions.DeliveryError(
+        f"Failed to deliver message: {send_status!r}", send_status
+    )
+zigpy.exceptions.DeliveryError: Failed to deliver message: <sl_Status.ZIGBEE_DELIVERY_FAILED: 3074>[0m
+[33m2026-07-04 14:05:32.919 WARNING (MainThread) [async_upnp_client.profiles.profile] Failed (re-)subscribing to: uuid:a44f585c-7867-40f9-b077-653daa7e6422, reason: UpnpConnectionError('ClientConnectorError(ConnectionKey(host=\'192.168.68.13\', port=9197, is_ssl=False, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=None), ConnectionRefusedError(111, "Connect call failed (\'192.168.68.13\', 9197)"))', None)[0m
+[33m2026-07-04 14:05:32.930 WARNING (MainThread) [async_upnp_client.profiles.profile] Failed (re-)subscribing to: uuid:f61af51e-38d9-46eb-a120-584312acd366, reason: UpnpConnectionError('ClientConnectorError(ConnectionKey(host=\'192.168.68.13\', port=9197, is_ssl=False, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=None), ConnectionRefusedError(111, "Connect call failed (\'192.168.68.13\', 9197)"))', None)[0m
+[33m2026-07-04 14:05:32.941 WARNING (MainThread) [async_upnp_client.profiles.profile] Failed (re-)subscribing to: uuid:78c39b53-abd8-442e-b2eb-056b0777a74d, reason: UpnpConnectionError('ClientConnectorError(ConnectionKey(host=\'192.168.68.13\', port=9197, is_ssl=False, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=None), ConnectionRefusedError(111, "Connect call failed (\'192.168.68.13\', 9197)"))', None)[0m
+[33m2026-07-04 17:43:22.793 WARNING (MainThread) [zigpy.application] Device <CustomDeviceV2 model='SBTZB-110' manuf='frient A/S' nwk=0x4BFF ieee=00:15:bc:00:39:00:43:8b is_initialized=True> callback failed - DeliveryError('Failed to deliver message: <sl_Status.ZIGBEE_DELIVERY_FAILED: 3074>')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.14/site-packages/zigpy/application.py", line 109, in _async_callback
+    await callback(*args, **kwargs)
+  File "/usr/local/lib/python3.14/site-packages/zigpy/device.py", line 430, in poll_control_checkin_callback
+    await poll_control.checkin_response(
+    ...<5 lines>...
+    )
+  File "/usr/local/lib/python3.14/site-packages/zigpy/zcl/__init__.py", line 782, in request
+    return await self._endpoint.request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.14/site-packages/zigpy/endpoint.py", line 229, in request
+    return await self.device.request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.14/site-packages/zigpy/device.py", line 652, in request
+    await send_request()
+  File "/usr/local/lib/python3.14/site-packages/zigpy/application.py", line 1094, in request
+    await self.send_packet(
+    ...<14 lines>...
+    )
+  File "/usr/local/lib/python3.14/site-packages/bellows/zigbee/application.py", line 1098, in send_packet
+    raise zigpy.exceptions.DeliveryError(
+        f"Failed to deliver message: {send_status!r}", send_status
+    )
+zigpy.exceptions.DeliveryError: Failed to deliver message: <sl_Status.ZIGBEE_DELIVERY_FAILED: 3074>[0m
+[31m2026-07-05 16:03:07.092 ERROR (MainThread) [homeassistant.components.spotify.coordinator] Error fetching spotify data: Error communicating with Spotify API[0m
+s6-rc: info: service s6rc-oneshot-runner: starting
+s6-rc: info: service s6rc-oneshot-runner successfully started
+s6-rc: info: service fix-attrs: starting
+s6-rc: info: service fix-attrs successfully started
+s6-rc: info: service legacy-cont-init: starting
+s6-rc: info: service legacy-cont-init successfully started
+s6-rc: info: service legacy-services: starting
+services-up: info: copying legacy longrun home-assistant (no readiness notification)
+s6-rc: info: service legacy-services successfully started
+[33m2026-07-05 23:01:21.954 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration navimow which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant[0m
+[33m2026-07-05 23:01:21.956 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration alarmo which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant[0m
+[33m2026-07-05 23:01:21.957 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration watchman which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant[0m
+[33m2026-07-05 23:01:21.958 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration nordpool which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant[0m
+[33m2026-07-05 23:01:21.959 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration alexa_media which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant[0m
+[33m2026-07-05 23:01:21.960 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant[0m
+[33m2026-07-05 23:01:21.961 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration bambu_lab which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant[0m
+[33m2026-07-05 23:01:21.962 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration spotifyplus which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant[0m
+[33m2026-07-05 23:01:22.464 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly[0m
+[33m2026-07-05 23:01:22.534 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=211 from 2026-07-01 06:21:06.534773)[0m
+[31m2026-07-05 23:01:41.052 ERROR (P1S-Mqtt-128) [custom_components.bambu_lab.pybambu] Connection failed with error code: 401[0m
+
+===== SUPERVISOR LOGS =====
+[32m2026-07-05 23:12:10.039 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:12:12.764 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[33m2026-07-05 23:17:10.038 WARNING (MainThread) [supervisor.api.middleware.security] /jobs no role for de91e161_hassio_onedrive_backup[0m
+[31m2026-07-05 23:17:10.038 ERROR (MainThread) [supervisor.api.middleware.security] Invalid token for access /jobs[0m
+[32m2026-07-05 23:17:10.040 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:17:11.196 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[33m2026-07-05 23:22:10.038 WARNING (MainThread) [supervisor.api.middleware.security] /jobs no role for de91e161_hassio_onedrive_backup[0m
+[31m2026-07-05 23:22:10.038 ERROR (MainThread) [supervisor.api.middleware.security] Invalid token for access /jobs[0m
+[32m2026-07-05 23:22:10.039 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:22:11.255 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[33m2026-07-05 23:27:10.039 WARNING (MainThread) [supervisor.api.middleware.security] /jobs no role for de91e161_hassio_onedrive_backup[0m
+[31m2026-07-05 23:27:10.039 ERROR (MainThread) [supervisor.api.middleware.security] Invalid token for access /jobs[0m
+[32m2026-07-05 23:27:10.041 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:27:14.693 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[33m2026-07-05 23:32:10.040 WARNING (MainThread) [supervisor.api.middleware.security] /jobs no role for de91e161_hassio_onedrive_backup[0m
+[31m2026-07-05 23:32:10.040 ERROR (MainThread) [supervisor.api.middleware.security] Invalid token for access /jobs[0m
+[32m2026-07-05 23:32:10.041 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:32:12.182 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:35:58.275 INFO (MainThread) [supervisor.api.middleware.security] /network/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:35:58.278 INFO (MainThread) [supervisor.api.middleware.security] /host/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:35:58.282 INFO (MainThread) [supervisor.api.middleware.security] /core/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:36:52.279 INFO (MainThread) [supervisor.api.middleware.security] /os/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:37:05.705 INFO (MainThread) [supervisor.api.middleware.security] /core/info access from a0d7b954_ssh[0m
+[33m2026-07-05 23:37:10.040 WARNING (MainThread) [supervisor.api.middleware.security] /jobs no role for de91e161_hassio_onedrive_backup[0m
+[31m2026-07-05 23:37:10.041 ERROR (MainThread) [supervisor.api.middleware.security] Invalid token for access /jobs[0m
+[32m2026-07-05 23:37:10.042 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:37:11.412 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:37:36.192 INFO (MainThread) [supervisor.api.middleware.security] /supervisor/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:37:42.535 INFO (MainThread) [supervisor.api.middleware.security] /host/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:39:07.730 INFO (MainThread) [supervisor.docker.manager] Stopping addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:39:10.878 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:39:11.064 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[32m2026-07-05 23:39:42.649 INFO (MainThread) [supervisor.docker.manager] Stopping addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:39:45.782 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:39:45.974 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[33m2026-07-05 23:42:10.042 WARNING (MainThread) [supervisor.api.middleware.security] /jobs no role for de91e161_hassio_onedrive_backup[0m
+[31m2026-07-05 23:42:10.042 ERROR (MainThread) [supervisor.api.middleware.security] Invalid token for access /jobs[0m
+[32m2026-07-05 23:42:10.043 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:42:11.213 INFO (MainThread) [supervisor.api.middleware.security] /backups access from de91e161_hassio_onedrive_backup[0m
+[32m2026-07-05 23:44:00.624 INFO (MainThread) [supervisor.docker.manager] Stopping addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:44:03.758 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:44:03.939 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[32m2026-07-05 23:44:12.509 INFO (MainThread) [supervisor.api.middleware.security] /network/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:44:12.511 INFO (MainThread) [supervisor.api.middleware.security] /host/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:44:12.515 INFO (MainThread) [supervisor.api.middleware.security] /core/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:45:26.462 INFO (MainThread) [supervisor.docker.manager] Stopping addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:29.599 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:29.787 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:45:33.431 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:45:33.435 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:45:33.440 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:33.618 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:45:37.271 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:45:37.274 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:45:37.279 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:37.464 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:45:41.130 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:45:41.134 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:45:41.139 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:41.316 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:45:44.974 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:45:44.977 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:45:44.982 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:45.174 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:45:48.822 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:45:48.826 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:45:48.830 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:49.007 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:45:52.662 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:45:52.666 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:45:52.671 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:52.849 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:45:56.510 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:45:56.514 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:45:56.518 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:45:56.697 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:46:00.346 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:46:00.350 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:46:00.354 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:46:00.538 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:46:04.190 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:46:04.194 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:46:04.201 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:46:04.386 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:46:08.035 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[33m2026-07-05 23:46:08.040 WARNING (MainThread) [supervisor.apps.app] Watchdog found app Advanced SSH & Web Terminal exited with code 1, restarting...[0m
+[32m2026-07-05 23:46:08.045 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:46:08.223 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[31m2026-07-05 23:46:11.891 ERROR (MainThread) [supervisor.apps.app] App Advanced SSH & Web Terminal exited with non-zero exit code 1[0m
+[32m2026-07-05 23:46:23.650 INFO (MainThread) [supervisor.docker.manager] Cleaning addon_a0d7b954_ssh application[0m
+[32m2026-07-05 23:46:23.843 INFO (MainThread) [supervisor.docker.app] Starting Docker app ghcr.io/hassio-addons/ssh with version 23.0.9[0m
+[32m2026-07-05 23:46:44.546 INFO (MainThread) [supervisor.api.middleware.security] /network/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:46:44.548 INFO (MainThread) [supervisor.api.middleware.security] /host/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:46:44.551 INFO (MainThread) [supervisor.api.middleware.security] /core/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:46:59.257 INFO (MainThread) [supervisor.api.middleware.security] /os/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:46:59.266 INFO (MainThread) [supervisor.api.middleware.security] /host/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:46:59.276 INFO (MainThread) [supervisor.api.middleware.security] /core/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:46:59.284 INFO (MainThread) [supervisor.api.middleware.security] /supervisor/info access from a0d7b954_ssh[0m
+[32m2026-07-05 23:46:59.303 INFO (MainThread) [supervisor.api.middleware.security] /core/logs access from a0d7b954_ssh[0m
+[32m2026-07-05 23:46:59.333 INFO (MainThread) [supervisor.api.middleware.security] /supervisor/logs access from a0d7b954_ssh[0m
+
+===== HOST LOGS =====
+2026-07-05 21:45:41.234 homeassistant containerd[476]: time="2026-07-05T23:45:41.234531003+02:00" level=info msg="connecting to shim f7a9caa4ec9dce2723ef8f743f055bdd87a2c6d5e2ea11a92c97469b4aeab04e" address="unix:///run/containerd/s/ab4e3e7418c88af26d457ed7f3153f8a8513b4d07c2a20b44396e60e555916d2" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:45:41.264 homeassistant systemd[1]: Started libcontainer container f7a9caa4ec9dce2723ef8f743f055bdd87a2c6d5e2ea11a92c97469b4aeab04e.
+2026-07-05 21:45:41.296 homeassistant dockerd[522]: time="2026-07-05T23:45:41.295988347+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=d47b5fd7cbb6 ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+2026-07-05 21:45:44.894 homeassistant systemd[1]: docker-f7a9caa4ec9dce2723ef8f743f055bdd87a2c6d5e2ea11a92c97469b4aeab04e.scope: Deactivated successfully.
+2026-07-05 21:45:44.911 homeassistant containerd[476]: time="2026-07-05T23:45:44.911559459+02:00" level=info msg="shim disconnected" id=f7a9caa4ec9dce2723ef8f743f055bdd87a2c6d5e2ea11a92c97469b4aeab04e namespace=moby
+2026-07-05 21:45:44.912 homeassistant dockerd[522]: time="2026-07-05T23:45:44.911954994+02:00" level=info msg="received task-delete event from containerd" container=f7a9caa4ec9dce2723ef8f743f055bdd87a2c6d5e2ea11a92c97469b4aeab04e module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2026-07-05 21:45:44.913 homeassistant containerd[476]: time="2026-07-05T23:45:44.913140099+02:00" level=info msg="cleaning up after shim disconnected" id=f7a9caa4ec9dce2723ef8f743f055bdd87a2c6d5e2ea11a92c97469b4aeab04e namespace=moby
+2026-07-05 21:45:44.913 homeassistant containerd[476]: time="2026-07-05T23:45:44.913180128+02:00" level=info msg="cleaning up dead shim" id=f7a9caa4ec9dce2723ef8f743f055bdd87a2c6d5e2ea11a92c97469b4aeab04e namespace=moby
+2026-07-05 21:45:44.942 homeassistant systemd[1]: var-lib-docker-overlay2-792cb509c7c72c9b66cbe70d60245ce7b042a421e0839ddc14a6dd7dd886fec4-merged.mount: Deactivated successfully.
+2026-07-05 21:45:44.942 homeassistant systemd[1]: mnt-data-docker-overlay2-792cb509c7c72c9b66cbe70d60245ce7b042a421e0839ddc14a6dd7dd886fec4-merged.mount: Deactivated successfully.
+2026-07-05 21:45:45.038 homeassistant systemd[1]: var-lib-docker-overlay2-f249597093a18d232fd8532988ff14c4e46add9b8e29b54c6744aabbb05a8993\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:45:45.038 homeassistant systemd[1]: mnt-data-docker-overlay2-f249597093a18d232fd8532988ff14c4e46add9b8e29b54c6744aabbb05a8993\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:45:45.078 homeassistant containerd[476]: time="2026-07-05T23:45:45.078079831+02:00" level=info msg="connecting to shim 02c5bf757ce43875058ed6294503acb8336e108db3ef9ffba3af12cd9de22ae1" address="unix:///run/containerd/s/10726a2fc60db849f7e6cbd06d0909dd7d57e9005665033637c1d20a5b6fd7bb" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:45:45.111 homeassistant systemd[1]: Started libcontainer container 02c5bf757ce43875058ed6294503acb8336e108db3ef9ffba3af12cd9de22ae1.
+2026-07-05 21:45:45.149 homeassistant dockerd[522]: time="2026-07-05T23:45:45.148873952+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=4c7b74dd4d95 ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+2026-07-05 21:45:46.857 homeassistant systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+2026-07-05 21:45:48.761 homeassistant systemd[1]: docker-02c5bf757ce43875058ed6294503acb8336e108db3ef9ffba3af12cd9de22ae1.scope: Deactivated successfully.
+2026-07-05 21:45:48.777 homeassistant containerd[476]: time="2026-07-05T23:45:48.776905519+02:00" level=info msg="shim disconnected" id=02c5bf757ce43875058ed6294503acb8336e108db3ef9ffba3af12cd9de22ae1 namespace=moby
+2026-07-05 21:45:48.777 homeassistant containerd[476]: time="2026-07-05T23:45:48.776950388+02:00" level=info msg="cleaning up after shim disconnected" id=02c5bf757ce43875058ed6294503acb8336e108db3ef9ffba3af12cd9de22ae1 namespace=moby
+2026-07-05 21:45:48.777 homeassistant containerd[476]: time="2026-07-05T23:45:48.776961948+02:00" level=info msg="cleaning up dead shim" id=02c5bf757ce43875058ed6294503acb8336e108db3ef9ffba3af12cd9de22ae1 namespace=moby
+2026-07-05 21:45:48.777 homeassistant dockerd[522]: time="2026-07-05T23:45:48.777136125+02:00" level=info msg="received task-delete event from containerd" container=02c5bf757ce43875058ed6294503acb8336e108db3ef9ffba3af12cd9de22ae1 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2026-07-05 21:45:48.807 homeassistant systemd[1]: var-lib-docker-overlay2-f249597093a18d232fd8532988ff14c4e46add9b8e29b54c6744aabbb05a8993-merged.mount: Deactivated successfully.
+2026-07-05 21:45:48.808 homeassistant systemd[1]: mnt-data-docker-overlay2-f249597093a18d232fd8532988ff14c4e46add9b8e29b54c6744aabbb05a8993-merged.mount: Deactivated successfully.
+2026-07-05 21:45:48.885 homeassistant systemd[1]: var-lib-docker-overlay2-4a60ad3b859f2dbe46ca3afb52163ef5854263d2f6ee03356f5cb6b104ef6278\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:45:48.885 homeassistant systemd[1]: mnt-data-docker-overlay2-4a60ad3b859f2dbe46ca3afb52163ef5854263d2f6ee03356f5cb6b104ef6278\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:45:48.926 homeassistant containerd[476]: time="2026-07-05T23:45:48.926520535+02:00" level=info msg="connecting to shim 6b1b3b3d37f3d0c7a4fc290cdf8278666420b642b9dd356e469ba1c2527852be" address="unix:///run/containerd/s/983b2304d7858dd88dae6e1b76da8812fbdd4b968ca253cadbde5c2e64fbbfb8" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:45:48.954 homeassistant systemd[1]: Started libcontainer container 6b1b3b3d37f3d0c7a4fc290cdf8278666420b642b9dd356e469ba1c2527852be.
+2026-07-05 21:45:48.987 homeassistant dockerd[522]: time="2026-07-05T23:45:48.987404495+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=a6fc34ad99c8 ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+2026-07-05 21:45:52.580 homeassistant systemd[1]: docker-6b1b3b3d37f3d0c7a4fc290cdf8278666420b642b9dd356e469ba1c2527852be.scope: Deactivated successfully.
+2026-07-05 21:45:52.596 homeassistant dockerd[522]: time="2026-07-05T23:45:52.596725403+02:00" level=info msg="received task-delete event from containerd" container=6b1b3b3d37f3d0c7a4fc290cdf8278666420b642b9dd356e469ba1c2527852be module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2026-07-05 21:45:52.597 homeassistant containerd[476]: time="2026-07-05T23:45:52.596556948+02:00" level=info msg="shim disconnected" id=6b1b3b3d37f3d0c7a4fc290cdf8278666420b642b9dd356e469ba1c2527852be namespace=moby
+2026-07-05 21:45:52.598 homeassistant containerd[476]: time="2026-07-05T23:45:52.597920220+02:00" level=info msg="cleaning up after shim disconnected" id=6b1b3b3d37f3d0c7a4fc290cdf8278666420b642b9dd356e469ba1c2527852be namespace=moby
+2026-07-05 21:45:52.598 homeassistant containerd[476]: time="2026-07-05T23:45:52.597934397+02:00" level=info msg="cleaning up dead shim" id=6b1b3b3d37f3d0c7a4fc290cdf8278666420b642b9dd356e469ba1c2527852be namespace=moby
+2026-07-05 21:45:52.625 homeassistant systemd[1]: var-lib-docker-overlay2-4a60ad3b859f2dbe46ca3afb52163ef5854263d2f6ee03356f5cb6b104ef6278-merged.mount: Deactivated successfully.
+2026-07-05 21:45:52.627 homeassistant systemd[1]: mnt-data-docker-overlay2-4a60ad3b859f2dbe46ca3afb52163ef5854263d2f6ee03356f5cb6b104ef6278-merged.mount: Deactivated successfully.
+2026-07-05 21:45:52.725 homeassistant systemd[1]: var-lib-docker-overlay2-78ca29da2103c820659ef93d46bb2a1b2a387c82504fa5553c08ae21e67128ef\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:45:52.725 homeassistant systemd[1]: mnt-data-docker-overlay2-78ca29da2103c820659ef93d46bb2a1b2a387c82504fa5553c08ae21e67128ef\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:45:52.766 homeassistant containerd[476]: time="2026-07-05T23:45:52.765944409+02:00" level=info msg="connecting to shim 1b5dd10b2472a29bbf2bcc94b2a67411e9a645342d71f43601569f5f47f63a5e" address="unix:///run/containerd/s/1655bf10d26df2363728d85d39a87760f625730ee892b411ba854d5a8df88bdd" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:45:52.796 homeassistant systemd[1]: Started libcontainer container 1b5dd10b2472a29bbf2bcc94b2a67411e9a645342d71f43601569f5f47f63a5e.
+2026-07-05 21:45:52.827 homeassistant dockerd[522]: time="2026-07-05T23:45:52.827189158+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=e7737ed7157c ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+2026-07-05 21:45:56.427 homeassistant systemd[1]: docker-1b5dd10b2472a29bbf2bcc94b2a67411e9a645342d71f43601569f5f47f63a5e.scope: Deactivated successfully.
+2026-07-05 21:45:56.444 homeassistant containerd[476]: time="2026-07-05T23:45:56.444036549+02:00" level=info msg="shim disconnected" id=1b5dd10b2472a29bbf2bcc94b2a67411e9a645342d71f43601569f5f47f63a5e namespace=moby
+2026-07-05 21:45:56.444 homeassistant containerd[476]: time="2026-07-05T23:45:56.444081062+02:00" level=info msg="cleaning up after shim disconnected" id=1b5dd10b2472a29bbf2bcc94b2a67411e9a645342d71f43601569f5f47f63a5e namespace=moby
+2026-07-05 21:45:56.444 homeassistant containerd[476]: time="2026-07-05T23:45:56.444091763+02:00" level=info msg="cleaning up dead shim" id=1b5dd10b2472a29bbf2bcc94b2a67411e9a645342d71f43601569f5f47f63a5e namespace=moby
+2026-07-05 21:45:56.444 homeassistant dockerd[522]: time="2026-07-05T23:45:56.444514255+02:00" level=info msg="received task-delete event from containerd" container=1b5dd10b2472a29bbf2bcc94b2a67411e9a645342d71f43601569f5f47f63a5e module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2026-07-05 21:45:56.473 homeassistant systemd[1]: var-lib-docker-overlay2-78ca29da2103c820659ef93d46bb2a1b2a387c82504fa5553c08ae21e67128ef-merged.mount: Deactivated successfully.
+2026-07-05 21:45:56.474 homeassistant systemd[1]: mnt-data-docker-overlay2-78ca29da2103c820659ef93d46bb2a1b2a387c82504fa5553c08ae21e67128ef-merged.mount: Deactivated successfully.
+2026-07-05 21:45:56.576 homeassistant systemd[1]: var-lib-docker-overlay2-ec59cc6a3a2ff479c6de4e55cae05b147307dc77ce7fbf4d62e8499bdecc93b7\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:45:56.576 homeassistant systemd[1]: mnt-data-docker-overlay2-ec59cc6a3a2ff479c6de4e55cae05b147307dc77ce7fbf4d62e8499bdecc93b7\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:45:56.616 homeassistant containerd[476]: time="2026-07-05T23:45:56.616155522+02:00" level=info msg="connecting to shim be8b840117e5f6016d7a263fedc59dcbc39d2fcea914ea87d0ff3c9901081bfd" address="unix:///run/containerd/s/09acab31982ab104d9f50886aaba7a4aed1c6fbe35e5ad62c6253b2349d8e1ef" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:45:56.648 homeassistant systemd[1]: Started libcontainer container be8b840117e5f6016d7a263fedc59dcbc39d2fcea914ea87d0ff3c9901081bfd.
+2026-07-05 21:45:56.677 homeassistant dockerd[522]: time="2026-07-05T23:45:56.677522357+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=244c705c06ce ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+2026-07-05 21:46:00.283 homeassistant systemd[1]: docker-be8b840117e5f6016d7a263fedc59dcbc39d2fcea914ea87d0ff3c9901081bfd.scope: Deactivated successfully.
+2026-07-05 21:46:00.298 homeassistant containerd[476]: time="2026-07-05T23:46:00.298542346+02:00" level=info msg="shim disconnected" id=be8b840117e5f6016d7a263fedc59dcbc39d2fcea914ea87d0ff3c9901081bfd namespace=moby
+2026-07-05 21:46:00.298 homeassistant containerd[476]: time="2026-07-05T23:46:00.298590999+02:00" level=info msg="cleaning up after shim disconnected" id=be8b840117e5f6016d7a263fedc59dcbc39d2fcea914ea87d0ff3c9901081bfd namespace=moby
+2026-07-05 21:46:00.299 homeassistant containerd[476]: time="2026-07-05T23:46:00.298607351+02:00" level=info msg="cleaning up dead shim" id=be8b840117e5f6016d7a263fedc59dcbc39d2fcea914ea87d0ff3c9901081bfd namespace=moby
+2026-07-05 21:46:00.299 homeassistant dockerd[522]: time="2026-07-05T23:46:00.298810517+02:00" level=info msg="received task-delete event from containerd" container=be8b840117e5f6016d7a263fedc59dcbc39d2fcea914ea87d0ff3c9901081bfd module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2026-07-05 21:46:00.328 homeassistant systemd[1]: var-lib-docker-overlay2-ec59cc6a3a2ff479c6de4e55cae05b147307dc77ce7fbf4d62e8499bdecc93b7-merged.mount: Deactivated successfully.
+2026-07-05 21:46:00.328 homeassistant systemd[1]: mnt-data-docker-overlay2-ec59cc6a3a2ff479c6de4e55cae05b147307dc77ce7fbf4d62e8499bdecc93b7-merged.mount: Deactivated successfully.
+2026-07-05 21:46:00.409 homeassistant systemd[1]: var-lib-docker-overlay2-f96f16474b2a80a84c8e40a0af574a2780954df6a08ecf11c2c628cbbf829e4e\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:46:00.409 homeassistant systemd[1]: mnt-data-docker-overlay2-f96f16474b2a80a84c8e40a0af574a2780954df6a08ecf11c2c628cbbf829e4e\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:46:00.450 homeassistant containerd[476]: time="2026-07-05T23:46:00.450812192+02:00" level=info msg="connecting to shim 902e4c87890ccfa7b96e2e8a836f9091560b5e17c30124cb929b27f481a4970e" address="unix:///run/containerd/s/584c0121ddcf9e7e4c45f6b7e587fbe9fb7fc72ce30e3f0e127043209074d6ee" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:46:00.484 homeassistant systemd[1]: Started libcontainer container 902e4c87890ccfa7b96e2e8a836f9091560b5e17c30124cb929b27f481a4970e.
+2026-07-05 21:46:00.515 homeassistant dockerd[522]: time="2026-07-05T23:46:00.515885985+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=f4dd48d6e402 ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+2026-07-05 21:46:04.129 homeassistant systemd[1]: docker-902e4c87890ccfa7b96e2e8a836f9091560b5e17c30124cb929b27f481a4970e.scope: Deactivated successfully.
+2026-07-05 21:46:04.145 homeassistant dockerd[522]: time="2026-07-05T23:46:04.145227411+02:00" level=info msg="received task-delete event from containerd" container=902e4c87890ccfa7b96e2e8a836f9091560b5e17c30124cb929b27f481a4970e module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2026-07-05 21:46:04.145 homeassistant containerd[476]: time="2026-07-05T23:46:04.145481210+02:00" level=info msg="shim disconnected" id=902e4c87890ccfa7b96e2e8a836f9091560b5e17c30124cb929b27f481a4970e namespace=moby
+2026-07-05 21:46:04.145 homeassistant containerd[476]: time="2026-07-05T23:46:04.145519324+02:00" level=info msg="cleaning up after shim disconnected" id=902e4c87890ccfa7b96e2e8a836f9091560b5e17c30124cb929b27f481a4970e namespace=moby
+2026-07-05 21:46:04.145 homeassistant containerd[476]: time="2026-07-05T23:46:04.145530133+02:00" level=info msg="cleaning up dead shim" id=902e4c87890ccfa7b96e2e8a836f9091560b5e17c30124cb929b27f481a4970e namespace=moby
+2026-07-05 21:46:04.173 homeassistant systemd[1]: var-lib-docker-overlay2-f96f16474b2a80a84c8e40a0af574a2780954df6a08ecf11c2c628cbbf829e4e-merged.mount: Deactivated successfully.
+2026-07-05 21:46:04.173 homeassistant systemd[1]: mnt-data-docker-overlay2-f96f16474b2a80a84c8e40a0af574a2780954df6a08ecf11c2c628cbbf829e4e-merged.mount: Deactivated successfully.
+2026-07-05 21:46:04.255 homeassistant systemd[1]: var-lib-docker-overlay2-de07a8354e875be7cd573867094f73d213dbeb28a65f9dc6630d8ea62cf7d6d2\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:46:04.255 homeassistant systemd[1]: mnt-data-docker-overlay2-de07a8354e875be7cd573867094f73d213dbeb28a65f9dc6630d8ea62cf7d6d2\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:46:04.296 homeassistant containerd[476]: time="2026-07-05T23:46:04.296623952+02:00" level=info msg="connecting to shim 4c386f016a18359876979b1546091e244d99e784f37ee49bc15579370d668467" address="unix:///run/containerd/s/aa35065a978cb728b2300015c51fccae24b9cd51ff1ae2b2e732151306eb7c1f" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:46:04.331 homeassistant systemd[1]: Started libcontainer container 4c386f016a18359876979b1546091e244d99e784f37ee49bc15579370d668467.
+2026-07-05 21:46:04.363 homeassistant dockerd[522]: time="2026-07-05T23:46:04.362991949+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=80aed02bc585 ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+2026-07-05 21:46:07.974 homeassistant systemd[1]: docker-4c386f016a18359876979b1546091e244d99e784f37ee49bc15579370d668467.scope: Deactivated successfully.
+2026-07-05 21:46:07.989 homeassistant containerd[476]: time="2026-07-05T23:46:07.989814356+02:00" level=info msg="shim disconnected" id=4c386f016a18359876979b1546091e244d99e784f37ee49bc15579370d668467 namespace=moby
+2026-07-05 21:46:07.989 homeassistant containerd[476]: time="2026-07-05T23:46:07.989882161+02:00" level=info msg="cleaning up after shim disconnected" id=4c386f016a18359876979b1546091e244d99e784f37ee49bc15579370d668467 namespace=moby
+2026-07-05 21:46:07.990 homeassistant containerd[476]: time="2026-07-05T23:46:07.989894851+02:00" level=info msg="cleaning up dead shim" id=4c386f016a18359876979b1546091e244d99e784f37ee49bc15579370d668467 namespace=moby
+2026-07-05 21:46:07.990 homeassistant dockerd[522]: time="2026-07-05T23:46:07.990689139+02:00" level=info msg="received task-delete event from containerd" container=4c386f016a18359876979b1546091e244d99e784f37ee49bc15579370d668467 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2026-07-05 21:46:08.017 homeassistant systemd[1]: var-lib-docker-overlay2-de07a8354e875be7cd573867094f73d213dbeb28a65f9dc6630d8ea62cf7d6d2-merged.mount: Deactivated successfully.
+2026-07-05 21:46:08.017 homeassistant systemd[1]: mnt-data-docker-overlay2-de07a8354e875be7cd573867094f73d213dbeb28a65f9dc6630d8ea62cf7d6d2-merged.mount: Deactivated successfully.
+2026-07-05 21:46:08.099 homeassistant systemd[1]: var-lib-docker-overlay2-66d04323105dd90f35724b0ae8cbbfafef301eee047590678e1f30cf2cfd0ae8\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:46:08.099 homeassistant systemd[1]: mnt-data-docker-overlay2-66d04323105dd90f35724b0ae8cbbfafef301eee047590678e1f30cf2cfd0ae8\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:46:08.140 homeassistant containerd[476]: time="2026-07-05T23:46:08.140576014+02:00" level=info msg="connecting to shim 93584413e2dcff0caea2084d2a111a9d46b5410632813153c0935423f811150e" address="unix:///run/containerd/s/b84619153e6d1f0aca5bf6b00b301bdc79d4d6c339c42386f60fd84e50002dcc" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:46:08.170 homeassistant systemd[1]: Started libcontainer container 93584413e2dcff0caea2084d2a111a9d46b5410632813153c0935423f811150e.
+2026-07-05 21:46:08.202 homeassistant dockerd[522]: time="2026-07-05T23:46:08.202610179+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=fc14579f1d9d ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+2026-07-05 21:46:11.820 homeassistant systemd[1]: docker-93584413e2dcff0caea2084d2a111a9d46b5410632813153c0935423f811150e.scope: Deactivated successfully.
+2026-07-05 21:46:11.836 homeassistant dockerd[522]: time="2026-07-05T23:46:11.836337382+02:00" level=info msg="received task-delete event from containerd" container=93584413e2dcff0caea2084d2a111a9d46b5410632813153c0935423f811150e module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+2026-07-05 21:46:11.836 homeassistant containerd[476]: time="2026-07-05T23:46:11.836687875+02:00" level=info msg="shim disconnected" id=93584413e2dcff0caea2084d2a111a9d46b5410632813153c0935423f811150e namespace=moby
+2026-07-05 21:46:11.836 homeassistant containerd[476]: time="2026-07-05T23:46:11.836729414+02:00" level=info msg="cleaning up after shim disconnected" id=93584413e2dcff0caea2084d2a111a9d46b5410632813153c0935423f811150e namespace=moby
+2026-07-05 21:46:11.836 homeassistant containerd[476]: time="2026-07-05T23:46:11.836739763+02:00" level=info msg="cleaning up dead shim" id=93584413e2dcff0caea2084d2a111a9d46b5410632813153c0935423f811150e namespace=moby
+2026-07-05 21:46:11.865 homeassistant systemd[1]: var-lib-docker-overlay2-66d04323105dd90f35724b0ae8cbbfafef301eee047590678e1f30cf2cfd0ae8-merged.mount: Deactivated successfully.
+2026-07-05 21:46:11.865 homeassistant systemd[1]: mnt-data-docker-overlay2-66d04323105dd90f35724b0ae8cbbfafef301eee047590678e1f30cf2cfd0ae8-merged.mount: Deactivated successfully.
+2026-07-05 21:46:23.707 homeassistant systemd[1]: var-lib-docker-overlay2-f0e8d75fcb0b7da2e75489141ab0028b8ca28c13d6421100b32b0a4f276cc8d4\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:46:23.708 homeassistant systemd[1]: mnt-data-docker-overlay2-f0e8d75fcb0b7da2e75489141ab0028b8ca28c13d6421100b32b0a4f276cc8d4\x2dinit-merged.mount: Deactivated successfully.
+2026-07-05 21:46:23.751 homeassistant containerd[476]: time="2026-07-05T23:46:23.751560907+02:00" level=info msg="connecting to shim bf22a76d636074ca634c31dce86b27b2913c740a1386516cdcef00775bca7ac8" address="unix:///run/containerd/s/6ea2ed126d595c14d8d843172368d6369ca2c17228d05c83e49cc9abbb72080e" namespace=moby protocol=ttrpc version=3
+2026-07-05 21:46:23.780 homeassistant systemd[1]: Started libcontainer container bf22a76d636074ca634c31dce86b27b2913c740a1386516cdcef00775bca7ac8.
+2026-07-05 21:46:23.811 homeassistant dockerd[522]: time="2026-07-05T23:46:23.811700694+02:00" level=info msg="sbJoin: gwep4 ''->'', gwep6 ''->''" eid=1b50eff86d52 ep=addon_a0d7b954_ssh net=host nid=b1f26cc1878c
+

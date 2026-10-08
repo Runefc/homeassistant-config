@@ -1,0 +1,14 @@
+esphome:
+  name: respeaker-kitchen
+  friendly_name: respeaker-kitchen
+
+# Replace this with your actual platform if you aren't using ESP32.
+esp32:
+  board: esp32dev
+
+logger:
+
+# No Wi-Fi secrets are set, so this starter has no network yet.
+# Add a ``wifi:`` block (with your credentials) or an ``ethernet:`` /
+# ``openthread:`` block to suit your board, then add ``api:`` and
+# ``ota:`` blocks once the network is ready.

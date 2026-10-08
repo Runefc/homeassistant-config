@@ -1,14 +1,30 @@
-esphome:
+
+substitutions:
   name: respeaker-kitchen
-  friendly_name: respeaker-kitchen
+  friendly_name: ReSpeaker Kitchen
+  respeaker_ref: main
 
-# Replace this with your actual platform if you aren't using ESP32.
-esp32:
-  board: esp32dev
+packages:
+  respeaker:
+    url: https://github.com/formatBCE/Respeaker-XVF3800-ESPHome-integration
+    ref: ${respeaker_ref}
+    refresh: 1d
+    files:
+      - packages/base.yaml
+      - packages/hardware.yaml
+      - packages/voice-assistant.yaml
+      - packages/leds.yaml
+      - packages/timers-alarm.yaml
 
-logger:
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
 
-# No Wi-Fi secrets are set, so this starter has no network yet.
-# Add a ``wifi:`` block (with your credentials) or an ``ethernet:`` /
-# ``openthread:`` block to suit your board, then add ``api:`` and
-# ``ota:`` blocks once the network is ready.
+api:
+  encryption:
+    key: !secret api_key
+
+ota:
+  - platform: esphome
+    id: ota_esphome
+    password: !secret ota_password

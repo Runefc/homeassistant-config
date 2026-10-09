@@ -1,6 +1,7 @@
 """
 Constants for the SpotifyPlus component.
 """
+from enum import StrEnum
 import logging
 
 DOMAIN = "spotifyplus"
@@ -15,7 +16,14 @@ DOMAIN_SCRIPT = "script"
 DOMAIN_MEDIA_PLAYER = "media_player"
 """ Domain identifier for media players (media_player). """
 
+SPOTIFY_BROWSE_LIMIT_TOTAL = 100
+""" Max number of items to return from a SpotifyPlus integration request that supports paging. """
+
+SPOTIFY_SEARCH_LIMIT_TOTAL = 48
+""" Max number of items to return (for each type) from a Spotify search request (5). """
+
 SPOTIFY_WEB_URL_PFX = "https://open.spotify.com"
+""" Spotify web url prefix """
 
 TOKEN_EXPIRE_REASON:str = "token_expire_reason"
 """ Token expiration reason code. """
@@ -58,6 +66,35 @@ SPOTIFY_SCOPES:list = \
     'user-read-recently-played',
     'user-top-read'
 ]
+
+class BrowsableMedia(StrEnum):
+    """
+    Enum of browsable media.
+    Contains the library root node key value definitions.
+    """
+    # library custom root node title definitions.
+    SPOTIFY_LIBRARY_INDEX = "spotify_library_index"
+    SPOTIFY_CATEGORY_PLAYLISTS = "spotify_category_playlists"
+    SPOTIFY_CATEGORY_PLAYLISTS_MADEFORYOU = "spotify_category_playlists_madeforyou"
+    SPOTIFY_CATEGORYS = "spotify_categorys"
+    SPOTIFY_FEATURED_PLAYLISTS = "spotify_featured_playlists"
+    SPOTIFY_NEW_RELEASES = "spotify_new_releases"
+    SPOTIFY_SEARCH_ALBUMS = "spotify_search_albums"
+    SPOTIFY_SEARCH_ARTISTS = "spotify_search_artists"
+    SPOTIFY_SEARCH_AUDIOBOOKS = "spotify_search_audiobooks"
+    SPOTIFY_SEARCH_PLAYLISTS = "spotify_search_playlists"
+    SPOTIFY_SEARCH_SHOWS = "spotify_search_shows"
+    SPOTIFY_SEARCH_TRACKS = "spotify_search_tracks"
+    SPOTIFY_USER_FOLLOWED_ARTISTS = "spotify_user_followed_artists"
+    SPOTIFY_USER_PLAYLISTS = "spotify_user_playlists"
+    SPOTIFY_USER_RECENTLY_PLAYED = "spotify_user_recently_played"
+    SPOTIFY_USER_SAVED_ALBUMS = "spotify_user_saved_albums"
+    SPOTIFY_USER_SAVED_AUDIOBOOKS = "spotify_user_saved_audiobooks"
+    SPOTIFY_USER_SAVED_SHOWS = "spotify_user_saved_shows"
+    SPOTIFY_USER_SAVED_TRACKS = "spotify_user_saved_tracks"
+    SPOTIFY_USER_TOP_ARTISTS = "spotify_user_top_artists"
+    SPOTIFY_USER_TOP_TRACKS = "spotify_user_top_tracks"
+
 
 # -----------------------------------------------------------------------------------
 # Custom State attribute identifiers.
@@ -204,6 +241,8 @@ SERVICE_SPOTIFY_ZEROCONF_DISCOVER_DEVICES = 'zeroconf_discover_devices'
 # Custom Service Schemas - MediaPlayerEntity enhancements.
 # -----------------------------------------------------------------------------------
 SERVICE_VOLUME_SET_STEP = 'volume_set_step'
+SERVICE_MEDIAPLAYER_TURN_OFF = 'turn_off'
+SERVICE_MEDIAPLAYER_TURN_ON = 'turn_on'
 
 # -----------------------------------------------------------------------------------
 # Custom Service Schemas - non-Spotify Web API related.
@@ -356,6 +395,8 @@ RESPONSE_PLAYER_NOT_MATCHED = "player_not_matched"
 RESPONSE_PLAYER_NOT_MATCHED_AREA = "player_not_matched_area"
 RESPONSE_PLAYER_NOT_PLAYING_MEDIA = "player_not_playing_media"
 RESPONSE_PLAYER_NOT_SPOTIFYPLUS = "player_not_spotifyplus"
+RESPONSE_PLAYER_POWER_TURN_OFF = "player_power_turn_off"
+RESPONSE_PLAYER_POWER_TURN_ON = "player_power_turn_on"
 RESPONSE_PLAYER_VOLUME_CONTROL_DOWN = "player_volume_control_down"
 RESPONSE_PLAYER_VOLUME_CONTROL_MUTE = "player_volume_control_mute"
 RESPONSE_PLAYER_VOLUME_CONTROL_SET_LEVEL = "player_volume_control_set_level"

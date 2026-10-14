@@ -2269,3 +2269,38 @@
     data:
       entity_id: alarm_control_panel.alarmo
   mode: single
+- id: '1791804223669'
+  alias: Skunk - Temperature Controlled Ventilation
+  description: Fan control with 2°C hysteresis and 2-minute delay
+  triggers:
+  - trigger: numeric_state
+    entity_id:
+    - sensor.enheder_skunk_temperatur_temperature
+    above: 28
+    for:
+      minutes: 2
+    id: fan_on
+  - trigger: numeric_state
+    entity_id:
+    - sensor.enheder_skunk_temperatur_temperature
+    below: 27
+    for:
+      minutes: 2
+    id: fan_off
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: fan_on
+      sequence:
+      - action: switch.turn_on
+        target:
+          entity_id: switch.skunk_ventilator
+    - conditions:
+      - condition: trigger
+        id: fan_off
+      sequence:
+      - action: switch.turn_off
+        target:
+          entity_id: switch.skunk_ventilator
+  mode: single

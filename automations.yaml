@@ -1955,6 +1955,17 @@
       hours: 0
       minutes: 10
       seconds: 0
+  - trigger: state
+    entity_id:
+    - zone.home
+    from:
+    - '1'
+    to:
+    - '2'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
   conditions:
   - condition: state
     entity_id: input_boolean.alexa_guest_mode

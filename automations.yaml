@@ -1501,7 +1501,6 @@
         target:
           device_id:
           - 38448042427b7048da4bc95ac57834f2
-          - fbeb45d3a51f020669023197f10548fd
           entity_id:
           - light.living_room_ikea_flet
           - light.kitchen_dining_table
